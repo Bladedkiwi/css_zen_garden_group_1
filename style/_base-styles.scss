@@ -1,0 +1,39 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    color: $color-5;
+}
+
+header,
+.summary {
+    text-align: $align-cen;
+    padding: $pad-1w;
+    padding-top: 0;
+}
+
+header {
+    font-size: $font-2qr;
+}
+
+h3 {
+    font-size: $font-1qr;
+    font-weight: bolder;
+    font-style: italic;
+    padding: $pad-hf;
+}
+
+body {
+    background-color: $color-4;
+}
+
+a {
+    color: $color-1;
+}
+
+p {
+    padding: $pad-hf;
+}

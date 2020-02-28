@@ -1,15 +1,113 @@
-.page-wrapper {
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, main {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  color: #EAF0CE;
+}
+
+header,
+.summary {
+  text-align: center;
+  padding: 1em;
+  padding-top: 0;
+}
+
+header {
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+  font-weight: bolder;
+  font-style: italic;
+  padding: 0.5em;
+}
+
+body {
   background-color: #272727;
+}
+
+a {
+  color: #FCC90F;
+}
+
+p {
+  padding: 0.5em;
+}
+
+.page-wrapper {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 0.4fr 1.7fr 0.1fr 1.9fr 0.4fr;
-      grid-template-columns: 0.4fr 1.7fr 0.1fr 1.9fr 0.4fr;
-      grid-template-areas: ". intro intro intro ." ". main main main ." ". end end end .";
+  -ms-grid-columns: 5fr 0.1fr 5fr;
+      grid-template-columns: 5fr 0.1fr 5fr;
+  -ms-grid-rows: 90px auto;
+      grid-template-rows: 90px auto;
+      grid-template-areas: ". . ." "intro intro intro" "main main main" "foot foot foot";
+  background-image: url(../img/plc-holders/100x45.png), url(../img/plc-holders/100x45.png);
+  background-position: top right, top left;
+  background-repeat: no-repeat;
   /* template for our page
     grid-template-columns: 0.4fr 1.7fr 0.1fr 1.9fr 0.4fr;
     grid-template-rows: 0.3fr 0.7fr 0.7fr 1.8fr 1fr 0.6fr 0.9fr 0.4fr 1.4fr 0.4fr 0.5fr 0.5fr 0.6fr 1.4fr;
     grid-template-areas: 
-    ". buttons buttons buttons ." 
+    ". . . . ." 
     ". banner banner banner ." 
     ". summary summary summary ." 
     ". preamble . preamble ." 
@@ -26,11 +124,7 @@
     */
 }
 
-/*
-". buttons buttons buttons ." 
-*/
 /* Template
-    ". buttons buttons buttons ." 
     ". banner banner banner ." 
     ". summary summary summary ." 
     ". preamble . preamble ."
@@ -38,36 +132,64 @@
 .intro {
   display: -ms-grid;
   display: grid;
-  -ms-grid-row: 1;
-  -ms-grid-column: 2;
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
   -ms-grid-column-span: 3;
   grid-area: intro;
-  -ms-grid-columns: .2fr 1fr .1fr 1fr .2fr;
-      grid-template-columns: .2fr 1fr .1fr 1fr .2fr;
-  -ms-grid-rows: .2fr 1fr .5fr .5fr .7fr;
-      grid-template-rows: .2fr 1fr .5fr .5fr .7fr;
-      grid-template-areas: ". buttons buttons buttons ."  ". banner banner banner ."  ". summary summary summary ."  ". preamble . preamble .";
+  -ms-grid-columns: 1fr 0.1fr 1fr;
+      grid-template-columns: 1fr 0.1fr 1fr;
+      grid-template-areas: "banner banner banner" "summary summary summary" "preamble preamble preamble";
 }
 
 header {
-  -ms-grid-row: 2;
-  -ms-grid-column: 2;
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
   -ms-grid-column-span: 3;
   grid-area: banner;
 }
 
 .summary {
-  -ms-grid-row: 3;
-  -ms-grid-column: 2;
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
   -ms-grid-column-span: 3;
   grid-area: summary;
 }
 
 .preamble {
-  -ms-grid-row: 4;
-  -ms-grid-column: 2;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
   -ms-grid-column-span: 3;
   grid-area: preamble;
+  -ms-grid-columns: 0.1fr 1fr 1fr 0.1fr;
+      grid-template-columns: 0.1fr 1fr 1fr 0.1fr;
+      grid-template-areas: ". . pre-p-1" ". pre-header pre-p-2" ". . pre-p-3";
+}
+
+.preamble h3 {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: pre-header;
+}
+
+.preamble p {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  grid-area: pre-p-1;
+  text-align: right;
+}
+
+.preamble p:nth-of-type(2) {
+  -ms-grid-row: 2;
+  -ms-grid-column: 3;
+  grid-area: pre-p-2;
+}
+
+.preamble p:nth-of-type(3) {
+  -ms-grid-row: 3;
+  -ms-grid-column: 3;
+  grid-area: pre-p-3;
 }
 
 /* Template 
@@ -81,48 +203,207 @@ header {
 .main {
   display: -ms-grid;
   display: grid;
-  -ms-grid-row: 2;
-  -ms-grid-column: 2;
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
   -ms-grid-column-span: 3;
   grid-area: main;
-  -ms-grid-columns: .5fr 1fr .1fr 1fr .2fr;
-      grid-template-columns: .5fr 1fr .1fr 1fr .2fr;
-  -ms-grid-rows: .5fr 1fr .5fr .5fr .7fr .4fr;
-      grid-template-rows: .5fr 1fr .5fr .5fr .7fr .4fr;
-      grid-template-areas: ". explanation . img ."  ". participation . benefits ."  ". participation . benefits ."  ". . . . ."  ". requirements requirements requirements ."  ". footer_flex .";
+  -ms-grid-columns: 1fr 0.1fr 1fr;
+      grid-template-columns: 1fr 0.1fr 1fr;
+      grid-template-areas: "explanation explanation explanation" "participation participation participation" "benefits benefits benefits" ". . ." "requirements requirements requirements" "ffoot ffoot ffoot";
 }
 
 .explanation {
+  display: -ms-grid;
+  display: grid;
   -ms-grid-row: 1;
-  -ms-grid-column: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
   grid-area: explanation;
+  -ms-grid-columns: 0.1fr 1fr 1fr 0.1fr;
+      grid-template-columns: 0.1fr 1fr 1fr 0.1fr;
+  -ms-grid-rows: 20vh auto;
+      grid-template-rows: 20vh auto;
+      grid-template-areas: ". . exp-header ." ". exp-p-1 exp-p-2 .";
+  background-image: url(../img/plc-holders/400x400.png);
+  background-position: top left;
+  background-repeat: no-repeat;
+}
+
+.explanation h3 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  grid-area: exp-header;
+  text-align: right;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.explanation p {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: exp-p-1;
+}
+
+.explanation p:nth-of-type(2) {
+  -ms-grid-row: 2;
+  -ms-grid-column: 3;
+  grid-area: exp-p-2;
+  text-align: right;
 }
 
 .participation {
+  display: -ms-grid;
+  display: grid;
   -ms-grid-row: 2;
-  -ms-grid-row-span: 2;
-  -ms-grid-column: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
   grid-area: participation;
+  -ms-grid-columns: 0.1fr 1fr 1fr 0.1fr;
+      grid-template-columns: 0.1fr 1fr 1fr 0.1fr;
+  -ms-grid-rows: 5vh auto;
+      grid-template-rows: 5vh auto;
+      grid-template-areas: ". . . ." ". . par-p-1 ." ". par-header par-p-2 ." ". . par-p-3 .";
+}
+
+.participation h3 {
+  -ms-grid-row: 3;
+  -ms-grid-column: 2;
+  grid-area: par-header;
+}
+
+.participation p {
+  -ms-grid-row: 2;
+  -ms-grid-column: 3;
+  grid-area: par-p-1;
+  text-align: right;
+}
+
+.participation p:nth-of-type(2) {
+  -ms-grid-row: 3;
+  -ms-grid-column: 3;
+  grid-area: par-p-2;
+}
+
+.participation p:nth-of-type(3) {
+  -ms-grid-row: 4;
+  -ms-grid-column: 3;
+  grid-area: par-p-3;
 }
 
 .benefits {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: benefits;
+  -ms-grid-columns: 0.1fr 1fr 1fr 0.1fr;
+      grid-template-columns: 0.1fr 1fr 1fr 0.1fr;
+  -ms-grid-rows: 20vh auto;
+      grid-template-rows: 20vh auto;
+      grid-template-areas: ". . . ." ". . ben-header ." ". ben-p-1 ben-header .";
+  background-image: url(../img/plc-holders/400x400.png);
+  background-position: top left;
+  background-repeat: no-repeat;
+}
+
+.benefits h3 {
   -ms-grid-row: 2;
   -ms-grid-row-span: 2;
-  -ms-grid-column: 4;
-  grid-area: benefits;
+  -ms-grid-column: 3;
+  grid-area: ben-header;
+  text-align: right;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.benefits p {
+  -ms-grid-row: 3;
+  -ms-grid-column: 2;
+  grid-area: ben-p-1;
 }
 
 .requirements {
+  display: -ms-grid;
+  display: grid;
   -ms-grid-row: 5;
-  -ms-grid-column: 2;
+  -ms-grid-column: 1;
   -ms-grid-column-span: 3;
   grid-area: requirements;
+  -ms-grid-columns: 0.1fr 1fr 1fr 0.1fr;
+      grid-template-columns: 0.1fr 1fr 1fr 0.1fr;
+  -ms-grid-rows: 75px auto;
+      grid-template-rows: 75px auto;
+      grid-template-areas: ". req-header req-header ." ". req-p-1 req-p-1 ." ". req-p-2 req-p-2 ." ". req-p-3 req-p-4 ." ". req-p-5 req-p-5 .";
+}
+
+.requirements h3 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
+  grid-area: req-header;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  padding: 1em;
+}
+
+.requirements p {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
+  grid-area: req-p-1;
+  padding: 0.75em;
+}
+
+.requirements p:nth-of-type(2) {
+  -ms-grid-row: 3;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
+  grid-area: req-p-2;
+}
+
+.requirements p:nth-of-type(3) {
+  -ms-grid-row: 4;
+  -ms-grid-column: 2;
+  grid-area: req-p-3;
+}
+
+.requirements p:nth-of-type(4) {
+  -ms-grid-row: 4;
+  -ms-grid-column: 3;
+  grid-area: req-p-4;
+  text-align: right;
+}
+
+.requirements p:nth-of-type(5) {
+  -ms-grid-row: 5;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
+  grid-area: req-p-5;
+  padding: 2em;
+  text-align: center;
 }
 
 footer {
   -ms-grid-row: 6;
-  -ms-grid-column: 2;
-  grid-area: footer_flex;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: ffoot;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  padding: 1em;
+}
+
+footer a {
+  width: 75px;
+  height: 25px;
 }
 
 /* Template
@@ -131,78 +412,118 @@ footer {
     ". bot-bar bot-bar bot-bar ." 
     ". space space space ."
 */
+.sidebar {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: foot;
+}
+
 .sidebar .wrapper {
   display: -ms-grid;
   display: grid;
-  -ms-grid-row: 3;
-  -ms-grid-column: 2;
-  -ms-grid-column-span: 3;
-  grid-area: end;
-  -ms-grid-columns: .5fr 1fr .1fr 1fr .2fr;
-      grid-template-columns: .5fr 1fr .1fr 1fr .2fr;
-  -ms-grid-rows: .5fr 1fr .5fr .5fr;
-      grid-template-rows: .5fr 1fr .5fr .5fr;
-      grid-template-areas: ". ds ds ds ."  ". da da da ."  ". zr zr zr ."  ". . . . .";
+  -ms-grid-columns: 0.1fr 1fr 1fr 0.1fr;
+      grid-template-columns: 0.1fr 1fr 1fr 0.1fr;
+  -ms-grid-rows: 1fr 0.5fr .8fr 75px;
+      grid-template-rows: 1fr 0.5fr .8fr 75px;
+      grid-template-areas: ". ds ds ." ". da da ." ". zr zr ." ". . . .";
+  grid-row-gap: 10px;
+  text-align: center;
 }
 
 .design-selection {
   -ms-grid-row: 1;
   -ms-grid-column: 2;
-  -ms-grid-column-span: 3;
+  -ms-grid-column-span: 2;
   grid-area: ds;
 }
 
 .design-archives {
   -ms-grid-row: 2;
   -ms-grid-column: 2;
-  -ms-grid-column-span: 3;
+  -ms-grid-column-span: 2;
   grid-area: da;
 }
 
 .zen-resources {
   -ms-grid-row: 3;
   -ms-grid-column: 2;
-  -ms-grid-column-span: 3;
+  -ms-grid-column-span: 2;
   grid-area: zr;
 }
 
-h1, h2, h3, h4, h5, h6, p {
-  color: #EAF0CE;
-}
-
-header, .summary {
-  text-align: center;
-}
-
-@media only screen and (max-width: 600px) {
+@media only screen and (min-width: 60em) {
+  .page-wrapper {
+    -ms-grid-rows: 50vh auto;
+        grid-template-rows: 50vh auto;
+    background-image: url(../img/plc-holders/300x100.png), url(../img/plc-holders/300x100.png);
+  }
   .preamble {
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: .4fr 1fr 1fr .4fr;
-        grid-template-columns: .4fr 1fr 1fr .4fr;
-        grid-template-areas: ". .      pre-p-1" ". pre-header pre-p-2" ". .          pre-p-3";
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
+    -ms-grid-rows: 15vh auto;
+        grid-template-rows: 15vh auto;
+        grid-template-areas: ". . . ." ". pre-header pre-p-2 ." ". pre-p-1 pre-p-3 .";
   }
   .preamble h3 {
-    -ms-grid-row: 2;
-    -ms-grid-column: 2;
-    grid-area: pre-header;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
   }
   .preamble p:nth-of-type(1) {
-    -ms-grid-row: 1;
-    -ms-grid-column: 3;
-    grid-area: pre-p-1;
+    text-align: left;
   }
-  .preamble p:nth-of-type(2) {
-    -ms-grid-row: 2;
-    -ms-grid-column: 3;
-    grid-area: pre-p-2;
+  .main {
+        grid-template-areas: "explanation explanation explanation" "participation benefits benefits" "participation benefits benefits" "requirements requirements requirements" "ffoot ffoot ffoot";
   }
-  .preamble p:nth-of-type(3) {
-    -ms-grid-row: 3;
-    -ms-grid-column: 3;
-    grid-area: pre-p-3;
+  .explanation {
+    -ms-grid-rows: 20vh auto;
+        grid-template-rows: 20vh auto;
+        grid-template-areas: ". . . ." ". exp-header . ." ". exp-p-1 . ." ". exp-p-2 . .";
+    background-position: right;
+  }
+  .explanation h3 {
+    text-align: left;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
+  .explanation p {
+    text-align: left;
+  }
+  .explanation p:nth-of-type(2) {
+    text-align: left;
+  }
+  .participation {
+    -ms-grid-columns: .1fr 1fr;
+        grid-template-columns: .1fr 1fr;
+    -ms-grid-rows: 20vh auto;
+        grid-template-rows: 20vh auto;
+        grid-template-areas: ". ." ". par-header" ". par-p-1" ". par-p-2 " ". par-p-3";
+  }
+  .participation p {
+    text-align: left;
+  }
+  .benefits {
+    -ms-grid-columns: 1fr .1fr;
+        grid-template-columns: 1fr .1fr;
+    -ms-grid-rows: 20vh 10vh auto;
+        grid-template-rows: 20vh 10vh auto;
+        grid-template-areas: ". ." ". ." "ben-header ." ". ." "ben-p-1 .";
+    background-position: top left;
+  }
+  .benefits p {
+    text-align: right;
+    padding: 2em;
+    padding-right: 10px;
+  }
+  .requirements {
+    -ms-grid-rows: 20vh 75px auto;
+        grid-template-rows: 20vh 75px auto;
+        grid-template-areas: ". . . ." ". req-header req-header ." ". req-p-1 req-p-1 ." ". req-p-2 req-p-2 ." ". req-p-3 req-p-3 ." ". req-p-4 req-p-4 ." ". req-p-5 req-p-5 .";
+  }
+  .requirements p:nth-of-type(4) {
+    text-align: left;
   }
 }
 /*# sourceMappingURL=style.css.map */

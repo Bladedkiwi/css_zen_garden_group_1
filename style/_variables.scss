@@ -1,0 +1,34 @@
+//colors
+$color-1: #FCC90F; //Yellow
+$color-2: #0D1321; //Dark Blue
+$color-3: #1D3461; //Space Blue
+$color-4: #272727; //Dark Grey 
+$color-5: #EAF0CE; //White
+//alignments
+$align-r: right;
+$align-l: left;
+$align-cen: center;
+$align-sb: space-between;
+$align-sa: space-around;
+//font sizes
+$font-qr: .25rem;
+$font-hf: .5rem;
+$font-hqr: .75rem;
+$font-1qr: 1.25rem;
+$font-2qr: 1.50rem;
+$font-3qr: 1.75rem;
+$font-2w: 2rem;
+//padding sizes -think of money or fractions-
+$pad-qr: .25em;
+$pad-hf: .5em;
+$pad-hqr: .75em;
+$pad-1w: 1em;
+$pad-1qr: 1.25em;
+$pad-2qr: 1.5em;
+$pad-3qr: 1.75em;
+$pad-2w: 2em;
+//grid-columns
+$gd-content: .1fr 1fr 1fr .1fr;
+$gd-pg:5fr 0.1fr 5fr;
+$gd-sub:1fr 0.1fr 1fr;
+$gd-rows: 20vh auto;
