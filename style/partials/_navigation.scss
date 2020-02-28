@@ -1,0 +1,99 @@
+header {
+  background-color: $color-3;
+}
+
+.cd-logo {
+  /* logo box style */
+  background-color: $color-1;
+  width: 120px;
+  background-image: url(https://upload.wikimedia.org/wikipedia/commons/7/75/Emblem_of_the_First_Galactic_Empire.svg);
+  background-size: 64px;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  @include MQ(M) {
+    width: 180px;
+  }
+}
+
+.cd-main-nav {
+  /* main navigation background color - full screen on small devices */
+  background: $color-4;
+
+  li a {
+    color: $color-5;
+    border-color: lighten($color-1, 5%);
+    
+    &:hover {
+      text-decoration: underline;
+    }
+    &:active {
+      color: $color-1;
+      box-shadow: 1px 1px $color-4;
+    }
+  }
+
+  @include MQ(M) {
+    li a {
+      color: lighten($color-2, 40%);
+
+      &.selected {
+        color: $color-5;
+        box-shadow: 0 2px 0 $color-1;
+      }
+
+      &:hover {
+        color: $color-5;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.cd-nav-trigger span {
+  /* hamburger menu */
+  background-color: $color-5;
+
+  &::before,
+  &::after {
+    /* upper and lower lines */
+    background-color: $color-1;
+  }
+}
+
+.nav-is-visible .cd-nav-trigger span {
+  /* hide line in the center on mobile when nav is visible */
+  background-color: rgba($color-1, 0);
+
+  &::before,
+  &::after {
+    /* preserve visibility of upper and lower lines - close icon */
+    background-color: rgba($color-1, 1);
+  }
+}
+.cd-primary-nav ul li a{
+  color: $color-1;
+  text-decoration: underline; 
+}
+.cd-box a {
+  color: $color-1;
+}
+.cd-download {
+  /* download button top-right visible on big devices */
+  background-color: lighten($color-2, 10%);
+
+  .no-touch &:hover {
+    background-color: lighten($color-2, 15%);
+  }
+
+  span {
+    /* tooltip */
+    background: $color-1;
+    color: $color-5;
+
+    &::before {
+      /* right arrow color */
+      border-color: $color-1;
+    }
+  }
+}

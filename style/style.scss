@@ -1,0 +1,37 @@
+@import 'partials/reset';
+@import 'partials/prefix-mixins';
+@import 'partials/layout'; // responsive grid and media queries
+@import url('https://fonts.googleapis.com/css?family=Galada|Roboto&display=swap'); // brings in the Galada and Roboto font-families
+
+
+//variables
+$color-1: #fcc90f; // yellow  #fcc90f
+$color-2: #0d1321; // black #0d1321
+$color-3: #1d3461; // dark blue #1d3461
+$color-4: #272727; // creepy black #272727
+$color-5: #eaf0ce; // tan green? #eaf0ce
+
+$primary-font: 'Roboto', sans-serif;
+$secondary-font: 'Galada', cursive;
+
+//To-DO LIST:
+//remember to add in @supprt for flex
+
+.page-wrapper {
+    display: grid;
+    
+}
+
+//NAV
+@import 'partials/navigation';
+
+//typography
+@import 'partials/typography';
+
+//buttons
+@import 'partials/buttons';
+
+//CONTENT
+
+
+//FOOTER

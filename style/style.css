@@ -1,0 +1,269 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+@import url("https://fonts.googleapis.com/css?family=Galada|Roboto&display=swap");
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, main {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.page-wrapper {
+  display: -ms-grid;
+  display: grid;
+}
+
+header {
+  background-color: #1d3461;
+}
+
+.cd-logo {
+  /* logo box style */
+  background-color: #fcc90f;
+  width: 120px;
+  background-image: url(https://upload.wikimedia.org/wikipedia/commons/7/75/Emblem_of_the_First_Galactic_Empire.svg);
+  background-size: 64px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+@media only screen and (min-width: 1024px) {
+  .cd-logo {
+    width: 180px;
+  }
+}
+
+.cd-main-nav {
+  /* main navigation background color - full screen on small devices */
+  background: #272727;
+}
+
+.cd-main-nav li a {
+  color: #eaf0ce;
+  border-color: #fccf28;
+}
+
+.cd-main-nav li a:hover {
+  text-decoration: underline;
+}
+
+.cd-main-nav li a:active {
+  color: #fcc90f;
+  -webkit-box-shadow: 1px 1px #272727;
+          box-shadow: 1px 1px #272727;
+}
+
+@media only screen and (min-width: 1024px) {
+  .cd-main-nav li a {
+    color: #4767b3;
+  }
+  .cd-main-nav li a.selected {
+    color: #eaf0ce;
+    -webkit-box-shadow: 0 2px 0 #fcc90f;
+            box-shadow: 0 2px 0 #fcc90f;
+  }
+  .cd-main-nav li a:hover {
+    color: #eaf0ce;
+    text-decoration: underline;
+  }
+}
+
+.cd-nav-trigger span {
+  /* hamburger menu */
+  background-color: #eaf0ce;
+}
+
+.cd-nav-trigger span::before, .cd-nav-trigger span::after {
+  /* upper and lower lines */
+  background-color: #fcc90f;
+}
+
+.nav-is-visible .cd-nav-trigger span {
+  /* hide line in the center on mobile when nav is visible */
+  background-color: rgba(252, 201, 15, 0);
+}
+
+.nav-is-visible .cd-nav-trigger span::before, .nav-is-visible .cd-nav-trigger span::after {
+  /* preserve visibility of upper and lower lines - close icon */
+  background-color: #fcc90f;
+}
+
+.cd-primary-nav ul li a {
+  color: #fcc90f;
+  text-decoration: underline;
+}
+
+.cd-box a {
+  color: #fcc90f;
+}
+
+.cd-download {
+  /* download button top-right visible on big devices */
+  background-color: #1b2846;
+}
+
+.no-touch .cd-download:hover {
+  background-color: #233358;
+}
+
+.cd-download span {
+  /* tooltip */
+  background: #fcc90f;
+  color: #eaf0ce;
+}
+
+.cd-download span::before {
+  /* right arrow color */
+  border-color: #fcc90f;
+}
+
+h1,
+h2 {
+  font-family: "Galada", cursive;
+  color: #fcc90f;
+}
+
+h1 {
+  font-size: 2.4rem;
+  font-weight: 300;
+  line-height: 1.2;
+  margin: 0 0 0.4em;
+}
+
+@media only screen and (min-width: 768px) {
+  h1 {
+    font-size: 3.2rem;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  h1 {
+    font-size: 4rem;
+  }
+}
+
+h2 {
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 1em 0;
+}
+
+@media only screen and (min-width: 768px) {
+  h2 {
+    font-size: 1.8rem;
+    margin: 1em 0 1.4em;
+  }
+}
+
+section > h2::before {
+  /* number before each section title */
+  color: #bc9402;
+}
+
+p {
+  font-size: 1.4rem;
+  line-height: 1.4;
+  color: white;
+}
+
+p a {
+  color: #eaf0ce;
+  text-decoration: underline;
+}
+
+@media only screen and (min-width: 768px) {
+  p {
+    font-size: 1.6rem;
+    line-height: 1.6;
+  }
+}
+
+.btn {
+  border: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border-radius: 0.25em;
+  font-size: 1.4rem;
+  font-family: "Galada", cursive;
+  color: #0d1321;
+  padding: 0.6em 2.2em;
+  cursor: pointer;
+  background: #fcc90f;
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.no-touch .btn:hover {
+  background: #fccb19;
+}
+
+.btn.btn-outline {
+  color: #fcc90f;
+  background: transparent;
+  -webkit-box-shadow: inset 0 0 0 1px #fcc90f;
+          box-shadow: inset 0 0 0 1px #fcc90f;
+}
+
+.no-touch .btn.btn-outline:hover {
+  color: #0d1321;
+  background: #fcc90f;
+}
+
+@media only screen and (min-width: 768px) {
+  .btn {
+    font-size: 1.6rem;
+  }
+}
+
+.cd-buttons .cd-box:nth-of-type(2) span {
+  /* CSS class name color */
+  color: #fcc90f;
+}
+/*# sourceMappingURL=style.css.map */
