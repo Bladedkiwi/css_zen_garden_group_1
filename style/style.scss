@@ -1,13 +1,10 @@
-HEAD
+
 //variables
 
 //To-DO LIST:
 //remember to add in @supprt for flex
-
-.page-wrapper {
-    display: grid;
-    
-}
+//turn bot-bar(grid-area) into grid-template
+//add in button section
 
 //NAV
 
@@ -23,19 +20,152 @@ $color-3: #1D3461; //Space Blue
 $color-4: #272727; //Dark Grey 
 $color-5: #EAF0CE; //White
 
+.page-wrapper {
+    background-color: $color-4;
+    display: grid;
+    grid-template-columns: 0.4fr 1.7fr 0.1fr 1.9fr 0.4fr;
+    grid-template-areas: 
+    ". intro intro intro ."
+    ". main main main ."
+    ". end end end .";
+    /* template for our page
+    grid-template-columns: 0.4fr 1.7fr 0.1fr 1.9fr 0.4fr;
+    grid-template-rows: 0.3fr 0.7fr 0.7fr 1.8fr 1fr 0.6fr 0.9fr 0.4fr 1.4fr 0.4fr 0.5fr 0.5fr 0.6fr 1.4fr;
+    grid-template-areas: 
+    ". buttons buttons buttons ." 
+    ". banner banner banner ." 
+    ". summary summary summary ." 
+    ". preamble . preamble ." 
+    ". explanation . img ." 
+    ". participation . benefits ." 
+    ". participation . benefits ." 
+    ". space space space ." 
+    ". requirements requirements requirements ." 
+    ". footer-flex ."
+    ". bot-bar bot-bar bot-bar ." 
+    ". bot-bar bot-bar bot-bar ." 
+    ". bot-bar bot-bar bot-bar ." 
+    ". space space space ."
+    */
+}
+/*
+". buttons buttons buttons ." 
+*/
+//button
+
+
+/* Template
+    ". buttons buttons buttons ." 
+    ". banner banner banner ." 
+    ". summary summary summary ." 
+    ". preamble . preamble ."
+*/
+//intro
+.intro {
+    display: grid;
+    grid-area: intro;
+    grid-template-columns: .2fr 1fr .1fr 1fr .2fr;
+    grid-template-rows: .2fr 1fr .5fr .5fr .7fr;
+    grid-template-areas: 
+    ". buttons buttons buttons ." 
+    ". banner banner banner ." 
+    ". summary summary summary ." 
+    ". preamble . preamble .";
+}
+header {
+    grid-area: banner;
+}
+.summary {
+    grid-area: summary;
+}
+.preamble {
+    grid-area: preamble;
+}
+
+
+/* Template 
+    ". explanation . img ." 
+    ". participation . benefits ." 
+    ". participation . benefits ." 
+    ". space space space ." 
+    ". requirements requirements requirements ." 
+    ". footer-flex ."
+*/
+//main-supporting
+.main {
+    display: grid;
+    grid-area: main;
+    grid-template-columns: .5fr 1fr .1fr 1fr .2fr;
+    grid-template-rows: .5fr 1fr .5fr .5fr .7fr .4fr;
+    grid-template-areas: 
+    ". explanation . img ." 
+    ". participation . benefits ." 
+    ". participation . benefits ." 
+    ". . . . ." 
+    ". requirements requirements requirements ." 
+    ". footer_flex .";
+}
+.explanation {
+    grid-area: explanation;
+}
+.participation {
+    grid-area: participation;
+}
+.benefits {
+    grid-area: benefits;
+}
+.requirements {
+    grid-area: requirements;
+}
+footer {
+    grid-area: footer_flex;
+}
+
+/* Template
+". bot-bar bot-bar bot-bar ." 
+    ". bot-bar bot-bar bot-bar ." 
+    ". bot-bar bot-bar bot-bar ." 
+    ". space space space ."
+*/
+//side-bar "bottom"
+.sidebar .wrapper{
+    display: grid;
+    grid-area: end;
+    grid-template-columns: .5fr 1fr .1fr 1fr .2fr;
+    grid-template-rows: .5fr 1fr .5fr .5fr;
+    grid-template-areas: 
+    ". ds ds ds ." 
+    ". da da da ." 
+    ". zr zr zr ." 
+    ". . . . .";
+}
+.design-selection {
+    grid-area: ds;
+}
+.design-archives {
+    grid-area: da;
+}
+.zen-resources {
+    grid-area: zr;
+}
+
+
+
+
+
+
+h1, h2, h3, h4, h5, h6, p {
+    color: $color-5;
+}
+
+
+header, .summary {
+    text-align: center;
+}
+
+
 //Darft Layout Start
 @media only screen and (max-width: 600px) {
-    body {
-        background-color: $color-4;
-    }
-
-    h1, h2, h3, h4, h5, h6, p {
-        color: $color-5;
-    }
-
-    header, .summary {
-        text-align: center;
-    }
 
     .preamble {
         display: grid;
@@ -65,16 +195,5 @@ $color-5: #EAF0CE; //White
 
     }
 
-    .explanation {
-        display: grid;
-        grid-template-areas: ".                    ."
-                             ". explanation-header ."
-                             ".                    .";
-
-    }
-
-    .explanation h3 {
-        grid-area: explanation-header;
-    }
 }
 
