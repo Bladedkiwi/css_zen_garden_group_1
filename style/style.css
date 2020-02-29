@@ -52,6 +52,24 @@ table {
   border-spacing: 0;
 }
 
+/* 
+https://css-tricks.com/browser-compatibility-css-grid-layouts-simple-sass-mixins/
+
+For IE compatibility: -add in later-
+
+    @mixin grid-child (colstart, colend, rowstart, row-end) {
+    -ms-grid-column: col-start;
+    -ms-grid-column-span: col-end - col-start;
+    -ms-grid-row: row-start;
+    -ms-grid-row-span: row-end - row-start;
+    grid-column: col-start/col-end;
+    grid-row: row-start/row-end;
+  }
+  
+  .child {
+    @include grid-child(2, 3, 2, 3);
+  }
+  */
 h1,
 h2,
 h3,
@@ -104,8 +122,8 @@ p {
   background-position: top right, top left;
   background-repeat: no-repeat;
   /* template for our page
-    grid-template-columns: 0.4fr 1.7fr 0.1fr 1.9fr 0.4fr;
-    grid-template-rows: 0.3fr 0.7fr 0.7fr 1.8fr 1fr 0.6fr 0.9fr 0.4fr 1.4fr 0.4fr 0.5fr 0.5fr 0.6fr 1.4fr;
+    @include gd-columns( 0.4fr 1.7fr 0.1fr 1.9fr 0.4fr;
+    @include gd-rows( 0.3fr 0.7fr 0.7fr 1.8fr 1fr 0.6fr 0.9fr 0.4fr 1.4fr 0.4fr 0.5fr 0.5fr 0.6fr 1.4fr;
     grid-template-areas: 
     ". . . . ." 
     ". banner banner banner ." 
@@ -130,12 +148,12 @@ p {
     ". preamble . preamble ."
 */
 .intro {
-  display: -ms-grid;
-  display: grid;
   -ms-grid-row: 2;
   -ms-grid-column: 1;
   -ms-grid-column-span: 3;
   grid-area: intro;
+  display: -ms-grid;
+  display: grid;
   -ms-grid-columns: 1fr 0.1fr 1fr;
       grid-template-columns: 1fr 0.1fr 1fr;
       grid-template-areas: "banner banner banner" "summary summary summary" "preamble preamble preamble";
@@ -394,6 +412,10 @@ footer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-flow: row row;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-flow: row row;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -426,8 +448,8 @@ footer a {
   display: grid;
   -ms-grid-columns: 0.1fr 1fr 1fr 0.1fr;
       grid-template-columns: 0.1fr 1fr 1fr 0.1fr;
-  -ms-grid-rows: 1fr 0.5fr .8fr 75px;
-      grid-template-rows: 1fr 0.5fr .8fr 75px;
+  -ms-grid-rows: 1fr 0.5fr 0.8fr 75px;
+      grid-template-rows: 1fr 0.5fr 0.8fr 75px;
       grid-template-areas: ". ds ds ." ". da da ." ". zr zr ." ". . . .";
   grid-row-gap: 10px;
   text-align: center;
@@ -495,8 +517,8 @@ footer a {
     text-align: left;
   }
   .participation {
-    -ms-grid-columns: .1fr 1fr;
-        grid-template-columns: .1fr 1fr;
+    -ms-grid-columns: 0.1fr 1fr;
+        grid-template-columns: 0.1fr 1fr;
     -ms-grid-rows: 20vh auto;
         grid-template-rows: 20vh auto;
         grid-template-areas: ". ." ". par-header" ". par-p-1" ". par-p-2 " ". par-p-3";
@@ -505,8 +527,8 @@ footer a {
     text-align: left;
   }
   .benefits {
-    -ms-grid-columns: 1fr .1fr;
-        grid-template-columns: 1fr .1fr;
+    -ms-grid-columns: 1fr 0.1fr;
+        grid-template-columns: 1fr 0.1fr;
     -ms-grid-rows: 20vh 10vh auto;
         grid-template-rows: 20vh 10vh auto;
         grid-template-areas: ". ." ". ." "ben-header ." ". ." "ben-p-1 .";

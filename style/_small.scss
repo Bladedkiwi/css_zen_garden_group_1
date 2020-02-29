@@ -1,16 +1,16 @@
 //page grid
 .page-wrapper {
-    display: grid;
-    grid-template-columns: $gd-pg;
-    grid-template-rows: 90px auto;
+    @include gd-display;
+    @include gd-columns($gd-pg);
+    @include gd-rows(90px auto);
     grid-template-areas: ". . ." "intro intro intro" "main main main" "foot foot foot";
     //Placeholders for buttons
     background-image: url(../img/plc-holders/100x45.png), url(../img/plc-holders/100x45.png);
     background-position: top right, top left;
     background-repeat: no-repeat;
     /* template for our page
-    grid-template-columns: 0.4fr 1.7fr 0.1fr 1.9fr 0.4fr;
-    grid-template-rows: 0.3fr 0.7fr 0.7fr 1.8fr 1fr 0.6fr 0.9fr 0.4fr 1.4fr 0.4fr 0.5fr 0.5fr 0.6fr 1.4fr;
+    @include gd-columns( 0.4fr 1.7fr 0.1fr 1.9fr 0.4fr;
+    @include gd-rows( 0.3fr 0.7fr 0.7fr 1.8fr 1fr 0.6fr 0.9fr 0.4fr 1.4fr 0.4fr 0.5fr 0.5fr 0.6fr 1.4fr;
     grid-template-areas: 
     ". . . . ." 
     ". banner banner banner ." 
@@ -38,38 +38,27 @@
 
 //intro
 .intro {
-    display: grid;
     grid-area: intro;
-    grid-template-columns: $gd-sub;
+    @include gd-display;
+    @include gd-columns($gd-sub);
     grid-template-areas: "banner banner banner" "summary summary summary" "preamble preamble preamble";
 }
 
-header {
-    grid-area: banner;
-}
-
-.summary {
-    grid-area: summary;
-}
+header {grid-area: banner;}
+.summary {grid-area: summary;}
 
 .preamble {
-    display: grid;
+    @include gd-display;
     grid-area: preamble;
-    grid-template-columns: $gd-content;
+    @include gd-columns($gd-content);
     grid-template-areas: ". . pre-p-1" ". pre-header pre-p-2" ". . pre-p-3";
-    h3 {
-        grid-area: pre-header;
-    }
+    h3 {grid-area: pre-header;}
     p {
         grid-area: pre-p-1;
         text-align: $align-r;
     }
-    p:nth-of-type(2) {
-        grid-area: pre-p-2;
-    }
-    p:nth-of-type(3) {
-        grid-area: pre-p-3;
-    }
+    p:nth-of-type(2) {grid-area: pre-p-2;}
+    p:nth-of-type(3) {grid-area: pre-p-3;}
 }
 
 
@@ -84,18 +73,18 @@ header {
 
 //main grid
 .main {
-    display: grid;
+    @include gd-display;
     grid-area: main;
-    grid-template-columns: $gd-sub;
+    @include gd-columns($gd-sub);
     grid-template-areas: "explanation explanation explanation" "participation participation participation" "benefits benefits benefits" ". . ." "requirements requirements requirements" "ffoot ffoot ffoot";
 }
 
 //main explanation grid
 .explanation {
-    display: grid;
+    @include gd-display;
     grid-area: explanation;
-    grid-template-columns: $gd-content;
-    grid-template-rows: $gd-rows;
+    @include gd-columns($gd-content);
+    @include gd-rows($gd-rows);
     grid-template-areas: ". . exp-header ." ". exp-p-1 exp-p-2 .";
     //placeholder for img
     background-image: url(../img/plc-holders/400x400.png);
@@ -106,9 +95,7 @@ header {
         text-align: $align-r;
         align-self: $align-cen;
     }
-    p {
-        grid-area: exp-p-1;
-    }
+    p {grid-area: exp-p-1;}
     p:nth-of-type(2) {
         grid-area: exp-p-2;
         text-align: $align-r;
@@ -117,32 +104,26 @@ header {
 
 //main participation grid
 .participation {
-    display: grid;
+    @include gd-display;
     grid-area: participation;
-    grid-template-columns: $gd-content;
-    grid-template-rows: 5vh auto;
+    @include gd-columns($gd-content);
+    @include gd-rows(5vh auto);
     grid-template-areas: ". . . ." ". . par-p-1 ." ". par-header par-p-2 ." ". . par-p-3 .";
-    h3 {
-        grid-area: par-header;
-    }
+    h3 {grid-area: par-header;}
     p {
         grid-area: par-p-1;
         text-align: $align-r;
     }
-    p:nth-of-type(2) {
-        grid-area: par-p-2;
-    }
-    p:nth-of-type(3) {
-        grid-area: par-p-3;
-    }
+    p:nth-of-type(2) {grid-area: par-p-2;}
+    p:nth-of-type(3) {grid-area: par-p-3;}
 }
 
 //main benefits grid
 .benefits {
-    display: grid;
+    @include gd-display;
     grid-area: benefits;
-    grid-template-columns: $gd-content;
-    grid-template-rows: $gd-rows;
+    @include gd-columns($gd-content);
+    @include gd-rows($gd-rows);
     grid-template-areas: ". . . ."". . ben-header ." ". ben-p-1 ben-header .";
     //placeholder for img
     background-image: url(../img/plc-holders/400x400.png);
@@ -153,17 +134,15 @@ header {
         text-align: $align-r;
         align-self: $align-cen;
     }
-    p {
-        grid-area: ben-p-1;
-    }
+    p {grid-area: ben-p-1;}
 }
 
 //main requirements grid
 .requirements {
-    display: grid;
+    @include gd-display;
     grid-area: requirements;
-    grid-template-columns: $gd-content;
-    grid-template-rows: 75px auto;
+    @include gd-columns($gd-content);
+    @include gd-rows(75px auto);
     grid-template-areas: ". req-header req-header ." ". req-p-1 req-p-1 ." ". req-p-2 req-p-2 ." ". req-p-3 req-p-4 ."". req-p-5 req-p-5 .";
     h3 {
         grid-area: req-header;
@@ -174,12 +153,8 @@ header {
         grid-area: req-p-1;
         padding: $pad-hqr;
     }
-    p:nth-of-type(2) {
-        grid-area: req-p-2;
-    }
-    p:nth-of-type(3) {
-        grid-area: req-p-3;
-    }
+    p:nth-of-type(2) {grid-area: req-p-2;}
+    p:nth-of-type(3) {grid-area: req-p-3;}
     p:nth-of-type(4) {
         grid-area: req-p-4;
         text-align: $align-r;
@@ -195,7 +170,7 @@ header {
 //main footer flex
 footer {
     grid-area: ffoot;
-    display: flex;
+    @include flex-container(row);
     justify-content: $align-cen;
     text-align: $align-cen;
     padding: $pad-1w;
@@ -215,27 +190,19 @@ footer {
 
 //side-bar "bottom"
 .sidebar {
-    display: grid;
+    @include gd-display;
     grid-area: foot;
 }
 
 .sidebar .wrapper {
-    display: grid;
-    grid-template-columns: $gd-content;
-    grid-template-rows: 1fr 0.5fr .8fr 75px;
+    @include gd-display;
+    @include gd-columns($gd-content);
+    @include gd-rows(1fr 0.5fr .8fr 75px);
     grid-template-areas: ". ds ds ." ". da da ." ". zr zr ." ". . . .";
     grid-row-gap: 10px;
     text-align: $align-cen;
 }
 
-.design-selection {
-    grid-area: ds;
-}
-
-.design-archives {
-    grid-area: da;
-}
-
-.zen-resources {
-    grid-area: zr;
-}
+.design-selection {grid-area: ds;}
+.design-archives {grid-area: da;}
+.zen-resources {grid-area: zr;}
