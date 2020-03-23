@@ -1,3 +1,43 @@
+@charset "UTF-8";
+/*
+Todo:
+
+--Style
+Style boxes? sheer lining framing the words (opacity) 
+Background – hyperspeed:onscroll (Ship zooming to planet in footer essentially)
+
+Possibility: Light Side effects/changing
+		-Rebel logo
+		-lightsabers change
+		-babyyoda/yoda
+		-large ship rebel
+Colors
+Text
+
+
+Animate/onhover pictures/headers
+
+auto-scroll footer - animates over seconds (keyframes)
+footer - deathstar with on hover glowing green to fire
+
+--Travis: Pictures
+	Light-side: BB8, or xwing, 
+	Svgs
+	pictures
+
+Lightsaber heading- light up on heading
+Background
+Hyperspeed – on scroll
+
+TODO: EXTRAS
+
+Footer - 
+Display Heads inbetween <a> tags
+Light Saber light up power down
+    -border- power up.down?
+*/
+@import url("https://fonts.googleapis.com/css?family=Galada|Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Comfortaa&display=swap");
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -75,9 +115,21 @@ h2,
 h3,
 h4,
 h5,
-h6,
+h6 {
+  font-family: "comfortaa", cursive;
+  color: #FCC90F;
+  text-shadow: 4px 1px 1px #0D1321;
+}
+
+h3 {
+  border-bottom: 7px outset #345eb0;
+  padding: 0;
+}
+
 p {
+  font-family: "Roboto", "sans serif";
   color: #EAF0CE;
+  padding: 0.5em;
 }
 
 header,
@@ -88,7 +140,7 @@ header,
 }
 
 header {
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 
 h3 {
@@ -106,8 +158,20 @@ a {
   color: #FCC90F;
 }
 
-p {
-  padding: 0.5em;
+[title^="Check the validity of this site&#8217;s HTML"]:after {
+  background-color: white;
+}
+
+footer a:nth-of-type(1) {
+  background-image: url(https://cdn.glitch.com/ba0615c2-9d9b-4d39-bde6-ff27665ccd56%2FheadYoda.svg?v=1584585877583);
+  background-position: 100% 10%;
+  background-repeat: no-repeat;
+}
+
+footer a:nth-of-type(2) {
+  background-image: url(https://cdn.glitch.com/ba0615c2-9d9b-4d39-bde6-ff27665ccd56%2FheadYoda.svg?v=1584585877583);
+  background-position: 100% 10%;
+  background-repeat: no-repeat;
 }
 
 .page-wrapper {
@@ -189,6 +253,9 @@ header {
   -ms-grid-row: 2;
   -ms-grid-column: 2;
   grid-area: pre-header;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 
 .preamble p {
@@ -261,6 +328,7 @@ header {
   -ms-grid-row: 2;
   -ms-grid-column: 2;
   grid-area: exp-p-1;
+  background-color: blue;
 }
 
 .explanation p:nth-of-type(2) {
@@ -268,6 +336,7 @@ header {
   -ms-grid-column: 3;
   grid-area: exp-p-2;
   text-align: right;
+  background-color: blue;
 }
 
 .participation {
@@ -288,6 +357,9 @@ header {
   -ms-grid-row: 3;
   -ms-grid-column: 2;
   grid-area: par-header;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 
 .participation p {
@@ -412,20 +484,32 @@ footer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-flow: row row;
+  -ms-flex-flow: row;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-          flex-flow: row row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  text-align: center;
-  padding: 1em;
+          flex-flow: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0;
+  width: 100%;
 }
 
 footer a {
-  width: 75px;
-  height: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 20%;
+  height: 75px;
 }
 
 /* Template
@@ -477,6 +561,15 @@ footer a {
 }
 
 @media only screen and (min-width: 60em) {
+  header {
+    font-size: 3rem;
+  }
+  h3 {
+    font-size: 1.75rem;
+    padding: 0;
+    margin: 0.75rem;
+    margin-left: 0;
+  }
   .page-wrapper {
     -ms-grid-rows: 50vh auto;
         grid-template-rows: 50vh auto;
@@ -546,6 +639,40 @@ footer a {
   }
   .requirements p:nth-of-type(4) {
     text-align: left;
+  }
+  footer {
+    -ms-grid-row: 5;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 3;
+    grid-area: ffoot;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-flow: row;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+            flex-flow: row;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 0;
+    width: 100%;
+  }
+  footer a {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 200px;
+    height: 75px;
   }
 }
 /*# sourceMappingURL=style.css.map */

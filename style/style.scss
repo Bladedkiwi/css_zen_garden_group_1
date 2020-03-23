@@ -1,10 +1,11 @@
 //To-DO LIST:
-//add in @supprt for flex
-//turn bot-bar(grid-area) into grid-template   CHECK
+//
+//
 //add in button section                        CHECK -just imgs atm
-//flex footer                                  
+//                                
 //implement mixin for IE:grid compatibility
 //
+
 /*
 Todo:
 
@@ -34,9 +35,19 @@ footer - deathstar with on hover glowing green to fire
 Lightsaber heading- light up on heading
 Background
 Hyperspeed – on scroll
+
+TODO: EXTRAS
+
+Footer - 
+Display Heads inbetween <a> tags
+Light Saber light up power down
+    -border- power up.down?
 */
+
 //
 //
+@import url('https://fonts.googleapis.com/css?family=Galada|Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Comfortaa&display=swap');
 @import "reset";
 @import "variables";
 @import "mixins";

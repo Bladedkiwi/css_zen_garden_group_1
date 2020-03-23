@@ -10,14 +10,21 @@ $align-l: left;
 $align-cen: center;
 $align-sb: space-between;
 $align-sa: space-around;
+//font style
+$font-head: 'comfortaa',
+cursive;
+$font-para: 'Roboto',
+'sans serif';
 //font sizes -think of money or fractions-
 $font-qr: .25rem;
 $font-hf: .5rem;
 $font-hqr: .75rem;
+$font-1w: 1rem;
 $font-1qr: 1.25rem;
-$font-2qr: 1.50rem;
-$font-3qr: 1.75rem;
+$font-1hf: 1.50rem;
+$font-1hqr: 1.75rem;
 $font-2w: 2rem;
+$font-3w: 3rem;
 //padding sizes 
 $pad-qr: .25em;
 $pad-hf: .5em;

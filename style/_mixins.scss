@@ -1,29 +1,37 @@
+@mixin header-font-style($font) {
+    font-family: $font;
+}
+
 @mixin transform($transforms) {
     -webkit-transform: $transforms;
     -moz-transform: $transforms;
     -ms-transform: $transforms;
     transform: $transforms;
-  }
+}
+
 @mixin rotate($deg) {
     @include transform(rotate(#{$deg}deg));
-  }
+}
 
-@mixin flex-container($axis, $wrap: row) {
+@mixin flex-container($axis) {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    -webkit-flex-flow: $axis $wrap;
-    -ms-flex-flow: $axis $wrap;
-    flex-flow: $axis $wrap;
-  }
+    -webkit-flex-flow: $axis;
+    -ms-flex-flow: $axis;
+    flex-flow: $axis;
+}
+
 @mixin gd-display {
     display: -ms-grid;
     display: grid;
-  }
-@mixin gd-columns($cols, $base: $gd-pg) {
-    grid-template-columns:$cols;
 }
+
+@mixin gd-columns($cols, $base: $gd-pg) {
+    grid-template-columns: $cols;
+}
+
 @mixin gd-rows($rows, $base: $gd-rows) {
     grid-template-rows: $rows;
 }
@@ -47,4 +55,3 @@ For IE compatibility: -add in later-
     @include grid-child(2, 3, 2, 3);
   }
   */
-  

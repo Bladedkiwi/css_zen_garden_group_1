@@ -1,3 +1,15 @@
+//base styles
+header {
+    font-size: $font-3w;
+}
+
+h3 {
+    font-size: $font-1hqr;
+    padding: 0;
+    margin: $font-hqr;
+    margin-left: 0;
+}
+
 //page grid
 .page-wrapper {
     @include gd-rows(50vh auto);
@@ -9,8 +21,12 @@
 .preamble {
     @include gd-rows(15vh auto);
     grid-template-areas: ". . . ." ". pre-header pre-p-2 ." ". pre-p-1 pre-p-3 .";
-    h3 {align-self: $align-cen;}
-    p:nth-of-type(1) {text-align: $align-l;}
+    h3 {
+        align-self: $align-cen;
+    }
+    p:nth-of-type(1) {
+        text-align: $align-l;
+    }
 }
 
 //main grid
@@ -27,8 +43,12 @@
         text-align: $align-l;
         align-self: $align-cen;
     }
-    p {text-align: $align-l;}
-    p:nth-of-type(2) {text-align: $align-l;}
+    p {
+        text-align: $align-l;
+    }
+    p:nth-of-type(2) {
+        text-align: $align-l;
+    }
 }
 
 //main participation grid
@@ -36,7 +56,9 @@
     @include gd-columns(.1fr 1fr);
     @include gd-rows($gd-rows);
     grid-template-areas: ". ." ". par-header" ". par-p-1" ". par-p-2 " ". par-p-3";
-    p {text-align: $align-l; }
+    p {
+        text-align: $align-l;
+    }
 }
 
 //main benefits grid
@@ -56,8 +78,26 @@
 .requirements {
     @include gd-rows(20vh 75px auto);
     grid-template-areas: ". . . ."". req-header req-header ." ". req-p-1 req-p-1 ." ". req-p-2 req-p-2 ." ". req-p-3 req-p-3 ." ". req-p-4 req-p-4 ."". req-p-5 req-p-5 .";
-    p:nth-of-type(4) {text-align: $align-l;}
+    p:nth-of-type(4) {
+        text-align: $align-l;
+    }
 }
 
 //main footer flex
+footer {
+    grid-area: ffoot;
+    @include flex-container(row);
+    justify-content: space-evenly;
+    align-items: $align-cen;
+    padding: 0;
+    width: 100%;
+    a {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        width: 200px;
+        height: 75px;
+    }
+}
+
 //side-bar "bottom"

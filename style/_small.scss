@@ -44,21 +44,33 @@
     grid-template-areas: "banner banner banner" "summary summary summary" "preamble preamble preamble";
 }
 
-header {grid-area: banner;}
-.summary {grid-area: summary;}
+header {
+    grid-area: banner;
+}
+
+.summary {
+    grid-area: summary;
+}
 
 .preamble {
     @include gd-display;
     grid-area: preamble;
     @include gd-columns($gd-content);
     grid-template-areas: ". . pre-p-1" ". pre-header pre-p-2" ". . pre-p-3";
-    h3 {grid-area: pre-header;}
+    h3 {
+        grid-area: pre-header;
+        align-self: center;
+    }
     p {
         grid-area: pre-p-1;
         text-align: $align-r;
     }
-    p:nth-of-type(2) {grid-area: pre-p-2;}
-    p:nth-of-type(3) {grid-area: pre-p-3;}
+    p:nth-of-type(2) {
+        grid-area: pre-p-2;
+    }
+    p:nth-of-type(3) {
+        grid-area: pre-p-3;
+    }
 }
 
 
@@ -95,10 +107,14 @@ header {grid-area: banner;}
         text-align: $align-r;
         align-self: $align-cen;
     }
-    p {grid-area: exp-p-1;}
+    p {
+        grid-area: exp-p-1;
+        background-color: blue;
+    }
     p:nth-of-type(2) {
         grid-area: exp-p-2;
         text-align: $align-r;
+        background-color: blue;
     }
 }
 
@@ -109,13 +125,20 @@ header {grid-area: banner;}
     @include gd-columns($gd-content);
     @include gd-rows(5vh auto);
     grid-template-areas: ". . . ." ". . par-p-1 ." ". par-header par-p-2 ." ". . par-p-3 .";
-    h3 {grid-area: par-header;}
+    h3 {
+        grid-area: par-header;
+        align-self: center;
+    }
     p {
         grid-area: par-p-1;
         text-align: $align-r;
     }
-    p:nth-of-type(2) {grid-area: par-p-2;}
-    p:nth-of-type(3) {grid-area: par-p-3;}
+    p:nth-of-type(2) {
+        grid-area: par-p-2;
+    }
+    p:nth-of-type(3) {
+        grid-area: par-p-3;
+    }
 }
 
 //main benefits grid
@@ -134,7 +157,9 @@ header {grid-area: banner;}
         text-align: $align-r;
         align-self: $align-cen;
     }
-    p {grid-area: ben-p-1;}
+    p {
+        grid-area: ben-p-1;
+    }
 }
 
 //main requirements grid
@@ -153,8 +178,12 @@ header {grid-area: banner;}
         grid-area: req-p-1;
         padding: $pad-hqr;
     }
-    p:nth-of-type(2) {grid-area: req-p-2;}
-    p:nth-of-type(3) {grid-area: req-p-3;}
+    p:nth-of-type(2) {
+        grid-area: req-p-2;
+    }
+    p:nth-of-type(3) {
+        grid-area: req-p-3;
+    }
     p:nth-of-type(4) {
         grid-area: req-p-4;
         text-align: $align-r;
@@ -171,12 +200,16 @@ header {grid-area: banner;}
 footer {
     grid-area: ffoot;
     @include flex-container(row);
-    justify-content: $align-cen;
-    text-align: $align-cen;
-    padding: $pad-1w;
+    justify-content: space-evenly;
+    align-items: $align-cen;
+    padding: 0;
+    width: 100%;
     a {
-        width: 75px;
-        height: 25px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        width: 20%;
+        height: 75px;
     }
 }
 
@@ -203,6 +236,14 @@ footer {
     text-align: $align-cen;
 }
 
-.design-selection {grid-area: ds;}
-.design-archives {grid-area: da;}
-.zen-resources {grid-area: zr;}
+.design-selection {
+    grid-area: ds;
+}
+
+.design-archives {
+    grid-area: da;
+}
+
+.zen-resources {
+    grid-area: zr;
+}
