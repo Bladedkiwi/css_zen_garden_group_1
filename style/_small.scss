@@ -99,7 +99,7 @@ header {
     @include gd-rows($gd-rows);
     grid-template-areas: ". . exp-header ." ". exp-p-1 exp-p-2 .";
     //placeholder for img
-    background-image: url(../img/plc-holders/400x400.png);
+    background-image: url(https://cdn.glitch.com/ba0615c2-9d9b-4d39-bde6-ff27665ccd56%2FATAT.svg?v=1584585877583);
     background-position: top left;
     background-repeat: no-repeat;
     h3 {
@@ -149,7 +149,7 @@ header {
     @include gd-rows($gd-rows);
     grid-template-areas: ". . . ."". . ben-header ." ". ben-p-1 ben-header .";
     //placeholder for img
-    background-image: url(../img/plc-holders/400x400.png);
+    background-image: url(https://cdn.glitch.com/ba0615c2-9d9b-4d39-bde6-ff27665ccd56%2Fxwing.svg?v=1584585877583);
     background-position: top left;
     background-repeat: no-repeat;
     h3 {

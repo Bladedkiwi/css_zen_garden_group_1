@@ -174,6 +174,12 @@ footer a:nth-of-type(2) {
   background-repeat: no-repeat;
 }
 
+footer a {
+  background-image: url(https://cdn.glitch.com/ba0615c2-9d9b-4d39-bde6-ff27665ccd56%2FheadYoda.svg?v=1584585877583);
+  background-position: 100% 10%;
+  background-repeat: no-repeat;
+}
+
 .page-wrapper {
   display: -ms-grid;
   display: grid;
@@ -309,7 +315,7 @@ header {
   -ms-grid-rows: 20vh auto;
       grid-template-rows: 20vh auto;
       grid-template-areas: ". . exp-header ." ". exp-p-1 exp-p-2 .";
-  background-image: url(../img/plc-holders/400x400.png);
+  background-image: url(https://cdn.glitch.com/ba0615c2-9d9b-4d39-bde6-ff27665ccd56%2FATAT.svg?v=1584585877583);
   background-position: top left;
   background-repeat: no-repeat;
 }
@@ -393,7 +399,7 @@ header {
   -ms-grid-rows: 20vh auto;
       grid-template-rows: 20vh auto;
       grid-template-areas: ". . . ." ". . ben-header ." ". ben-p-1 ben-header .";
-  background-image: url(../img/plc-holders/400x400.png);
+  background-image: url(https://cdn.glitch.com/ba0615c2-9d9b-4d39-bde6-ff27665ccd56%2Fxwing.svg?v=1584585877583);
   background-position: top left;
   background-repeat: no-repeat;
 }
@@ -573,7 +579,7 @@ footer a {
   .page-wrapper {
     -ms-grid-rows: 50vh auto;
         grid-template-rows: 50vh auto;
-    background-image: url(../img/plc-holders/300x100.png), url(../img/plc-holders/300x100.png);
+    background-image: url(https://cdn.glitch.com/ba0615c2-9d9b-4d39-bde6-ff27665ccd56%2Frebel.svg?v=1584585877583), url(https://cdn.glitch.com/ba0615c2-9d9b-4d39-bde6-ff27665ccd56%2Fempire.svg?v=1584585877583);
   }
   .preamble {
     -ms-grid-rows: 15vh auto;
