@@ -194,7 +194,7 @@ footer a:nth-of-type(4) {
   -ms-grid-rows: 90px auto;
       grid-template-rows: 90px auto;
       grid-template-areas: ". . ." "intro intro intro" "main main main" "foot foot foot";
-  background-image: url(../img/plc-holders/100x45.png), url(../img/plc-holders/100x45.png);
+  background-image: url(https://cdn.glitch.com/ba0615c2-9d9b-4d39-bde6-ff27665ccd56%2Frebel.svg?v=1584585877583), url(https://cdn.glitch.com/ba0615c2-9d9b-4d39-bde6-ff27665ccd56%2Fempire.svg?v=1584585877583);
   background-position: top right, top left;
   background-repeat: no-repeat;
   /* template for our page
@@ -586,6 +586,7 @@ footer a {
     -ms-grid-rows: 50vh auto;
         grid-template-rows: 50vh auto;
     background-image: url(https://cdn.glitch.com/ba0615c2-9d9b-4d39-bde6-ff27665ccd56%2Frebel.svg?v=1584585877583), url(https://cdn.glitch.com/ba0615c2-9d9b-4d39-bde6-ff27665ccd56%2Fempire.svg?v=1584585877583);
+    background-position: top right, top left;
   }
   .preamble {
     -ms-grid-rows: 15vh auto;
@@ -685,6 +686,13 @@ footer a {
             align-items: center;
     width: 200px;
     height: 75px;
+  }
+  .wrapper {
+    height: 200px;
+    overflow: auto;
+  }
+  .wrapper * {
+    padding: 1em;
   }
 }
 /*# sourceMappingURL=style.css.map */

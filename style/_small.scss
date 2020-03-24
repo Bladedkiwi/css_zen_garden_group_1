@@ -5,7 +5,7 @@
     @include gd-rows(90px auto);
     grid-template-areas: ". . ." "intro intro intro" "main main main" "foot foot foot";
     //Placeholders for buttons
-    background-image: url(../img/plc-holders/100x45.png), url(../img/plc-holders/100x45.png);
+    background-image: url(https://cdn.glitch.com/ba0615c2-9d9b-4d39-bde6-ff27665ccd56%2Frebel.svg?v=1584585877583), url(https://cdn.glitch.com/ba0615c2-9d9b-4d39-bde6-ff27665ccd56%2Fempire.svg?v=1584585877583);
     background-position: top right, top left;
     background-repeat: no-repeat;
     /* template for our page
