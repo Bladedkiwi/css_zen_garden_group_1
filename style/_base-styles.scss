@@ -1,75 +1,119 @@
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    @include header-font-style($font-head);
-    color: $color-1;
-    text-shadow: 4px 1px 1px $color-2;
-}
-
-h3 {
-    border-bottom: 7px outset lighten($color-3, 20%);
-    padding: 0;
-}
-
-p {
-    @include header-font-style($font-para);
-    color: $color-5;
-    padding: $pad-hf;
-}
-
-header,
-.summary {
-    text-align: $align-cen;
-    padding: $pad-1w;
-    padding-top: 0;
-}
-
-header {
-    font-size: $font-2w;
-}
-
-h3 {
-    font-size: $font-1qr;
-    font-weight: bolder;
-    font-style: italic;
-    padding: $pad-hf;
-}
-
-body {
-    background-color: $color-4;
-}
-
-a {
-    color: $color-1;
-}
-
-[title ^="Check the validity of this site&#8217;s HTML"]:after {
-    background-color: white;
-}
-
-footer a:nth-of-type(1) {
-    background-image: url(https://cdn.glitch.com/ba0615c2-9d9b-4d39-bde6-ff27665ccd56%2FheadVader.svg?v=1585006738224);
-    background-position: 100% 10%;
-    background-repeat: no-repeat;
-}
-
-footer a:nth-of-type(2) {
-    background-image: url(https://cdn.glitch.com/ba0615c2-9d9b-4d39-bde6-ff27665ccd56%2FheadYoda.svg?v=1584585877583);
-    background-position: 100% 10%;
-    background-repeat: no-repeat;
-}
-
-footer a:nth-of-type(3) {
-    background-image: url(https://cdn.glitch.com/ba0615c2-9d9b-4d39-bde6-ff27665ccd56%2FheadTrooper.svg?v=1584585877583);
-    background-position: 100% 10%;
-    background-repeat: no-repeat;
-}
-
-footer a:nth-of-type(4) {
-    background-image: url(https://cdn.glitch.com/ba0615c2-9d9b-4d39-bde6-ff27665ccd56%2FheadChewie.svg?v=1584585877583);
-    background-position: 100% 10%;
-    background-repeat: no-repeat;
-}
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        @include header-font-style($font-head);
+        color: $color-1;
+        text-shadow: 4px 1px 1px $color-4;
+    }
+    
+    h1,
+    h2 {
+        font-size: 100px;
+        font-weight: bolder;
+        transform: rotateX(60deg) translateZ(10px);
+        text-shadow: 6px 1px 2px $color-1;
+    }
+    
+    h3 {
+        border-bottom: 7px outset lighten($color-3, 20%);
+        padding: 0;
+        font-size: $font-1qr;
+        font-weight: bolder;
+        font-style: italic;
+        padding: $pad-hf;
+        animation: test 3s linear infinite;
+    }
+    
+    @keyframes test {
+        0% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-10px);
+        }
+        100% {
+            transform: translateY(0);
+        }
+    }
+    
+    p {
+        @include header-font-style($font-para);
+        color: $color-5;
+        padding: $pad-1w;
+        font-size: 23px;
+        background: rgba(38, 38, 38, 0.5);
+        box-shadow: 0px 0px 20px 15px rgba(38, 38, 38, 0.5);
+        margin: 13px;
+        border-radius: 10px;
+        animation: para 5s linear infinite;
+    }
+    
+    @keyframes para {
+        0% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-10px);
+        }
+        100% {
+            transform: translateY(0);
+        }
+    }
+    
+    abbr {
+        text-decoration: none;
+    }
+    
+    header,
+    .summary {
+        text-align: $align-cen;
+        padding: $pad-1w;
+        padding-top: 0;
+    }
+    
+    header {
+        font-size: $font-2w;
+        perspective: 2000px;
+        perspective-origin: 50% -200px;
+    }
+    
+    body {
+        background-color: $color-4;
+        background: url(../img/space_background.png);
+    }
+    
+    a {
+        color: $color-1;
+        text-decoration: none;
+    }
+    
+    [title ^="Check the validity of this site&#8217;s HTML"]:after {
+        background-color: white;
+    }
+    
+    footer a:nth-of-type(1) {
+        background-image: url(https://cdn.glitch.com/ba0615c2-9d9b-4d39-bde6-ff27665ccd56%2FheadVader.svg?v=1585102059786);
+        background-position: 100% 10%;
+        background-repeat: no-repeat;
+    }
+    
+    footer a:nth-of-type(2) {
+        background-image: url(https://cdn.glitch.com/ba0615c2-9d9b-4d39-bde6-ff27665ccd56%2FheadYoda.svg?v=1584585877583);
+        background-position: 100% 10%;
+        background-repeat: no-repeat;
+    }
+    
+    footer a:nth-of-type(3) {
+        background-image: url(https://cdn.glitch.com/ba0615c2-9d9b-4d39-bde6-ff27665ccd56%2FheadTrooper.svg?v=1584585877583);
+        background-position: 100% 10%;
+        background-repeat: no-repeat;
+    }
+    
+    footer a:nth-of-type(4) {
+        background-image: url(https://cdn.glitch.com/ba0615c2-9d9b-4d39-bde6-ff27665ccd56%2FheadChewie.svg?v=1584585877583);
+        background-position: 100% 10%;
+        background-repeat: no-repeat;
+    }

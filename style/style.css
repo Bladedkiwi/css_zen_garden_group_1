@@ -118,18 +118,105 @@ h5,
 h6 {
   font-family: "comfortaa", cursive;
   color: #FCC90F;
-  text-shadow: 4px 1px 1px #0D1321;
+  text-shadow: 4px 1px 1px #272727;
+}
+
+h1,
+h2 {
+  font-size: 100px;
+  font-weight: bolder;
+  -webkit-transform: rotateX(60deg) translateZ(10px);
+          transform: rotateX(60deg) translateZ(10px);
+  text-shadow: 6px 1px 2px #FCC90F;
 }
 
 h3 {
   border-bottom: 7px outset #345eb0;
   padding: 0;
+  font-size: 1.25rem;
+  font-weight: bolder;
+  font-style: italic;
+  padding: 0.5em;
+  -webkit-animation: test 3s linear infinite;
+          animation: test 3s linear infinite;
+}
+
+@-webkit-keyframes test {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  50% {
+    -webkit-transform: translateY(-10px);
+            transform: translateY(-10px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes test {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  50% {
+    -webkit-transform: translateY(-10px);
+            transform: translateY(-10px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
 }
 
 p {
   font-family: "Roboto", "sans serif";
   color: #EAF0CE;
-  padding: 0.5em;
+  padding: 1em;
+  font-size: 23px;
+  background: rgba(38, 38, 38, 0.5);
+  -webkit-box-shadow: 0px 0px 20px 15px rgba(38, 38, 38, 0.5);
+          box-shadow: 0px 0px 20px 15px rgba(38, 38, 38, 0.5);
+  margin: 13px;
+  border-radius: 10px;
+  -webkit-animation: para 5s linear infinite;
+          animation: para 5s linear infinite;
+}
+
+@-webkit-keyframes para {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  50% {
+    -webkit-transform: translateY(-10px);
+            transform: translateY(-10px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes para {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  50% {
+    -webkit-transform: translateY(-10px);
+            transform: translateY(-10px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+abbr {
+  text-decoration: none;
 }
 
 header,
@@ -141,21 +228,20 @@ header,
 
 header {
   font-size: 2rem;
-}
-
-h3 {
-  font-size: 1.25rem;
-  font-weight: bolder;
-  font-style: italic;
-  padding: 0.5em;
+  -webkit-perspective: 2000px;
+          perspective: 2000px;
+  -webkit-perspective-origin: 50% -200px;
+          perspective-origin: 50% -200px;
 }
 
 body {
   background-color: #272727;
+  background: url(../img/space_background.png);
 }
 
 a {
   color: #FCC90F;
+  text-decoration: none;
 }
 
 [title^="Check the validity of this site&#8217;s HTML"]:after {
@@ -163,7 +249,7 @@ a {
 }
 
 footer a:nth-of-type(1) {
-  background-image: url(https://cdn.glitch.com/ba0615c2-9d9b-4d39-bde6-ff27665ccd56%2FheadVader.svg?v=1585006738224);
+  background-image: url(https://cdn.glitch.com/ba0615c2-9d9b-4d39-bde6-ff27665ccd56%2FheadVader.svg?v=1585102059786);
   background-position: 100% 10%;
   background-repeat: no-repeat;
 }
@@ -194,9 +280,9 @@ footer a:nth-of-type(4) {
   -ms-grid-rows: 90px auto;
       grid-template-rows: 90px auto;
       grid-template-areas: ". . ." "intro intro intro" "main main main" "foot foot foot";
-  background-image: url(https://cdn.glitch.com/ba0615c2-9d9b-4d39-bde6-ff27665ccd56%2Frebel.svg?v=1584585877583), url(https://cdn.glitch.com/ba0615c2-9d9b-4d39-bde6-ff27665ccd56%2Fempire.svg?v=1584585877583);
-  background-position: top right, top left;
-  background-repeat: no-repeat;
+  /*background-image: url(https://cdn.glitch.com/ba0615c2-9d9b-4d39-bde6-ff27665ccd56%2Frebel.svg?v=1584585877583), url(https://cdn.glitch.com/ba0615c2-9d9b-4d39-bde6-ff27665ccd56%2Fempire.svg?v=1584585877583);
+    background-position: top right, top left;
+    background-repeat: no-repeat;*/
   /* template for our page
     @include gd-columns( 0.4fr 1.7fr 0.1fr 1.9fr 0.4fr;
     @include gd-rows( 0.3fr 0.7fr 0.7fr 1.8fr 1fr 0.6fr 0.9fr 0.4fr 1.4fr 0.4fr 0.5fr 0.5fr 0.6fr 1.4fr;
@@ -247,6 +333,27 @@ header {
   -ms-grid-column: 1;
   -ms-grid-column-span: 3;
   grid-area: summary;
+  -webkit-perspective: 2000px;
+          perspective: 2000px;
+  -webkit-perspective-origin: 50% -200px;
+          perspective-origin: 50% -200px;
+}
+
+.summary p {
+  background: transparent;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  color: #FCC90F;
+  -webkit-transform: rotateX(60deg) translateZ(10px);
+          transform: rotateX(60deg) translateZ(10px);
+  -webkit-animation: none;
+          animation: none;
+  font-size: 2em;
+}
+
+.summary p:nth-of-child(2) {
+  padding: revert;
+  margin: 0;
 }
 
 .preamble {
@@ -268,6 +375,7 @@ header {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
+  margin-bottom: 80px;
 }
 
 .preamble p {
@@ -275,6 +383,10 @@ header {
   -ms-grid-column: 3;
   grid-area: pre-p-1;
   text-align: right;
+}
+
+.preamble p:nth-of-type(1) {
+  margin-top: -75px;
 }
 
 .preamble p:nth-of-type(2) {
@@ -290,12 +402,12 @@ header {
 }
 
 /* Template 
-    ". explanation . img ." 
-    ". participation . benefits ." 
-    ". participation . benefits ." 
-    ". space space space ." 
-    ". requirements requirements requirements ." 
-    ". footer-flex ."
+". explanation . img ." 
+". participation . benefits ." 
+". participation . benefits ." 
+". space space space ." 
+". requirements requirements requirements ." 
+". footer-flex ."
 */
 .main {
   display: -ms-grid;
@@ -321,7 +433,7 @@ header {
   -ms-grid-rows: 20vh auto;
       grid-template-rows: 20vh auto;
       grid-template-areas: ". . exp-header ." ". exp-p-1 exp-p-2 .";
-  background-image: url(https://cdn.glitch.com/ba0615c2-9d9b-4d39-bde6-ff27665ccd56%2FATAT.svg?v=1584585877583);
+  background-image: url(https://cdn.glitch.com/ba0615c2-9d9b-4d39-bde6-ff27665ccd56%2Ftiefighter.svg?v=1585104694878);
   background-position: top left;
   background-repeat: no-repeat;
 }
@@ -340,7 +452,6 @@ header {
   -ms-grid-row: 2;
   -ms-grid-column: 2;
   grid-area: exp-p-1;
-  background-color: blue;
 }
 
 .explanation p:nth-of-type(2) {
@@ -348,7 +459,6 @@ header {
   -ms-grid-column: 3;
   grid-area: exp-p-2;
   text-align: right;
-  background-color: blue;
 }
 
 .participation {
@@ -419,12 +529,14 @@ header {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
+  margin-bottom: -250px;
 }
 
 .benefits p {
   -ms-grid-row: 3;
   -ms-grid-column: 2;
   grid-area: ben-p-1;
+  margin-bottom: 10px;
 }
 
 .requirements {
@@ -526,9 +638,9 @@ footer a {
 
 /* Template
 ". bot-bar bot-bar bot-bar ." 
-    ". bot-bar bot-bar bot-bar ." 
-    ". bot-bar bot-bar bot-bar ." 
-    ". space space space ."
+". bot-bar bot-bar bot-bar ." 
+". bot-bar bot-bar bot-bar ." 
+". space space space ."
 */
 .sidebar {
   display: -ms-grid;
@@ -585,8 +697,6 @@ footer a {
   .page-wrapper {
     -ms-grid-rows: 50vh auto;
         grid-template-rows: 50vh auto;
-    background-image: url(https://cdn.glitch.com/ba0615c2-9d9b-4d39-bde6-ff27665ccd56%2Frebel.svg?v=1584585877583), url(https://cdn.glitch.com/ba0615c2-9d9b-4d39-bde6-ff27665ccd56%2Fempire.svg?v=1584585877583);
-    background-position: top right, top left;
   }
   .preamble {
     -ms-grid-rows: 15vh auto;
@@ -643,7 +753,6 @@ footer a {
   .benefits p {
     text-align: right;
     padding: 2em;
-    padding-right: 10px;
   }
   .requirements {
     -ms-grid-rows: 20vh 75px auto;
