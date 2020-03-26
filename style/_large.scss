@@ -84,26 +84,47 @@ h3 {
 
 //main footer flex
 footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     grid-area: ffoot;
-    @include flex-container(row);
-    justify-content: space-evenly;
-    align-items: $align-cen;
-    padding: 0;
+    //@include flex-container(row);
+    //justify-content: space-evenly;
+    //align-items: $align-cen;
+    padding: 50px 0;
     width: 100%;
     a {
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        width: 200px;
+        display: block;
+        text-align: center;
+        width: 300px;
         height: 75px;
     }
 }
 
 //side-bar "bottom"
+.sidebar {
+    display: grid;
+    grid-template-rows: 0.5fr 1fr 100px 100px;
+    grid-template-areas: '.' 'sidebar' '.' 'planet';
+}
+
 .wrapper {
-    height: 200px;
+    grid-area: sidebar;
+    height: 300px;
     overflow: auto;
     * {
         padding: $pad-1w;
     }
+}
+
+.extra1 {
+    z-index: -1;
+    position: absolute;
+    bottom: 0;
+    background: $color-4;
+    height: 200px;
+    width: 100%;
+    border-top-left-radius: 100%;
+    border-top-right-radius: 100%;
+    box-shadow: 0 0 50px $color-5;
 }

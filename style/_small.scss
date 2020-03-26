@@ -1,5 +1,17 @@
+    //body wrapper grid
+    #css-zen-garden {
+        @include gd-display;
+        @include gd-columns($gd-pg);
+        @include gd-rows(10fr 0.1fr);
+        grid-template-areas: "bdy bdy bdy" "ext ext ext";
+        position: relative;
+    }
+    
     //page grid
     .page-wrapper {
+        position: relative;
+        z-index: 1;
+        grid-area: bdy;
         @include gd-display;
         @include gd-columns($gd-pg);
         @include gd-rows(90px auto);
@@ -237,6 +249,7 @@
     .sidebar {
         @include gd-display;
         grid-area: foot;
+        color: $color-1;
     }
     
     .sidebar .wrapper {
@@ -258,4 +271,8 @@
     
     .zen-resources {
         grid-area: zr;
+    }
+    
+    .extra1 {
+        grid-area: ext;
     }

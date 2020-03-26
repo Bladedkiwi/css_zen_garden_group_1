@@ -110,6 +110,10 @@ For IE compatibility: -add in later-
     @include grid-child(2, 3, 2, 3);
   }
   */
+body {
+  cursor: url("https://cdn.glitch.com/ba0615c2-9d9b-4d39-bde6-ff27665ccd56%2Flightsabre.svg?v=1585189953982"), auto;
+}
+
 h1,
 h2,
 h3,
@@ -272,7 +276,24 @@ footer a:nth-of-type(4) {
   background-repeat: no-repeat;
 }
 
+#css-zen-garden {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 5fr 0.1fr 5fr;
+      grid-template-columns: 5fr 0.1fr 5fr;
+  -ms-grid-rows: 10fr 0.1fr;
+      grid-template-rows: 10fr 0.1fr;
+      grid-template-areas: "bdy bdy bdy" "ext ext ext";
+  position: relative;
+}
+
 .page-wrapper {
+  position: relative;
+  z-index: 1;
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: bdy;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 5fr 0.1fr 5fr;
@@ -649,6 +670,7 @@ footer a {
   -ms-grid-column: 1;
   -ms-grid-column-span: 3;
   grid-area: foot;
+  color: #FCC90F;
 }
 
 .sidebar .wrapper {
@@ -682,6 +704,13 @@ footer a {
   -ms-grid-column: 2;
   -ms-grid-column-span: 2;
   grid-area: zr;
+}
+
+.extra1 {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: ext;
 }
 
 @media only screen and (min-width: 60em) {
@@ -763,45 +792,56 @@ footer a {
     text-align: left;
   }
   footer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     -ms-grid-row: 5;
     -ms-grid-column: 1;
     -ms-grid-column-span: 3;
     grid-area: ffoot;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-flow: row;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-            flex-flow: row;
-    -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    padding: 0;
+    padding: 50px 0;
     width: 100%;
   }
   footer a {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    width: 200px;
+    display: block;
+    text-align: center;
+    width: 300px;
     height: 75px;
   }
+  .sidebar {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-rows: 0.5fr 1fr 100px 100px;
+        grid-template-rows: 0.5fr 1fr 100px 100px;
+        grid-template-areas: '.' 'sidebar' '.' 'planet';
+  }
   .wrapper {
-    height: 200px;
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    grid-area: sidebar;
+    height: 300px;
     overflow: auto;
   }
   .wrapper * {
     padding: 1em;
+  }
+  .extra1 {
+    z-index: -1;
+    position: absolute;
+    bottom: 0;
+    background: #272727;
+    height: 200px;
+    width: 100%;
+    border-top-left-radius: 100%;
+    border-top-right-radius: 100%;
+    -webkit-box-shadow: 0 0 50px #EAF0CE;
+            box-shadow: 0 0 50px #EAF0CE;
   }
 }
 /*# sourceMappingURL=style.css.map */
