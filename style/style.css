@@ -111,7 +111,7 @@ For IE compatibility: -add in later-
   }
   */
 body {
-  cursor: url("https://cdn.glitch.com/ba0615c2-9d9b-4d39-bde6-ff27665ccd56%2Flightsabre.svg?v=1585189953982"), auto;
+  cursor: url(http://www.rw-designer.com/cursor-view/1631.png), auto;
 }
 
 h1,
@@ -259,18 +259,21 @@ footer a:nth-of-type(1) {
 }
 
 footer a:nth-of-type(2) {
-  background-image: url(https://cdn.glitch.com/ba0615c2-9d9b-4d39-bde6-ff27665ccd56%2FheadYoda.svg?v=1584585877583);
-  background-position: 100% 10%;
-  background-repeat: no-repeat;
-}
-
-footer a:nth-of-type(3) {
   background-image: url(https://cdn.glitch.com/ba0615c2-9d9b-4d39-bde6-ff27665ccd56%2FheadTrooper.svg?v=1584585877583);
   background-position: 100% 10%;
   background-repeat: no-repeat;
 }
 
 footer a:nth-of-type(4) {
+  background-image: url(https://cdn.glitch.com/ba0615c2-9d9b-4d39-bde6-ff27665ccd56%2FheadYoda.svg?v=1584585877583);
+  background-position: 100% 60%;
+  background-repeat: no-repeat;
+  background-size: 40%;
+  text-align: start;
+  padding-left: 90px;
+}
+
+footer a:nth-of-type(3) {
   background-image: url(https://cdn.glitch.com/ba0615c2-9d9b-4d39-bde6-ff27665ccd56%2FheadChewie.svg?v=1584585877583);
   background-position: 100% 10%;
   background-repeat: no-repeat;
