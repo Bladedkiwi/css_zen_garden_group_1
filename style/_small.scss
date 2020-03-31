@@ -1,278 +1,300 @@
-    //body wrapper grid
-    #css-zen-garden {
-        @include gd-display;
-        @include gd-columns($gd-pg);
-        @include gd-rows(10fr 0.1fr);
-        grid-template-areas: "bdy bdy bdy" "ext ext ext";
-        position: relative;
+//body wrapper grid for planet
+body {
+    @include gd-display;
+    @include gd-columns($gd-pg);
+    @include gd-rows(10fr 0.1fr);
+    grid-template-areas: "bdy bdy bdy" "ext ext ext";
+    position: relative;
+}
+
+//page grid
+.page-wrapper {
+    position: relative;
+    z-index: 1;
+    grid-area: bdy;
+    @include gd-display;
+    @include gd-columns($gd-pg);
+    @include gd-rows(90px auto);
+    grid-template-areas: ". . ." "intro intro intro" "main main main" "foot foot foot";
+}
+
+//intro
+.intro {
+    grid-area: intro;
+    @include gd-display;
+    @include gd-columns($gd-sub);
+    grid-template-areas: "banner banner banner" "summary summary summary" "preamble preamble preamble";
+    h1 {
+        font-size: 120%;
+        text-shadow: 2px 2px $color-1;
     }
-    
-    //page grid
-    .page-wrapper {
-        position: relative;
-        z-index: 1;
-        grid-area: bdy;
-        @include gd-display;
-        @include gd-columns($gd-pg);
-        @include gd-rows(90px auto);
-        grid-template-areas: ". . ." "intro intro intro" "main main main" "foot foot foot";
-        //Placeholders for buttons
-        /*background-image: url(https://cdn.glitch.com/ba0615c2-9d9b-4d39-bde6-ff27665ccd56%2Frebel.svg?v=1584585877583), url(https://cdn.glitch.com/ba0615c2-9d9b-4d39-bde6-ff27665ccd56%2Fempire.svg?v=1584585877583);
-    background-position: top right, top left;
-    background-repeat: no-repeat;*/
-        /* template for our page
-    @include gd-columns( 0.4fr 1.7fr 0.1fr 1.9fr 0.4fr;
-    @include gd-rows( 0.3fr 0.7fr 0.7fr 1.8fr 1fr 0.6fr 0.9fr 0.4fr 1.4fr 0.4fr 0.5fr 0.5fr 0.6fr 1.4fr;
-    grid-template-areas: 
-    ". . . . ." 
-    ". banner banner banner ." 
-    ". summary summary summary ." 
-    ". preamble . preamble ." 
-    ". explanation . img ." 
-    ". participation . benefits ." 
-    ". participation . benefits ." 
-    ". space space space ." 
-    ". requirements requirements requirements ." 
-    ". footer-flex ."
-    ". bot-bar bot-bar bot-bar ." 
-    ". bot-bar bot-bar bot-bar ." 
-    ". bot-bar bot-bar bot-bar ." 
-    ". space space space ."
-    */
+    h2 {
+        font-size: 100%;
+        text-shadow: 2px 2px $color-1;
     }
-    /* Template
-    ". banner banner banner ." 
-    ". summary summary summary ." 
-    ". preamble . preamble ."
-*/
-    
-    //intro
-    .intro {
-        grid-area: intro;
-        @include gd-display;
-        @include gd-columns($gd-sub);
-        grid-template-areas: "banner banner banner" "summary summary summary" "preamble preamble preamble";
-    }
-    
-    header {
-        grid-area: banner;
-    }
-    
-    .summary {
-        grid-area: summary;
-        perspective: 2000px;
-        perspective-origin: 50% -200px;
-        p {
-            background: transparent;
-            box-shadow: none;
-            color: $color-1;
-            transform: rotateX(60deg) translateZ(10px);
-            animation: none;
-            font-size: 2em;
-        }
-        p:nth-of-child(2) {
-            padding: revert;
-            margin: 0;
-        }
-    }
-    
-    .preamble {
-        @include gd-display;
-        grid-area: preamble;
-        @include gd-columns($gd-content);
-        grid-template-areas: ". . pre-p-1" ". pre-header pre-p-2" ". . pre-p-3";
-        h3 {
-            grid-area: pre-header;
-            align-self: center;
-            margin-bottom: 80px;
-        }
-        p {
-            grid-area: pre-p-1;
-            text-align: $align-r;
-        }
-        p:nth-of-type(1) {
-            margin-top: -75px;
-        }
-        p:nth-of-type(2) {
-            grid-area: pre-p-2;
-        }
-        p:nth-of-type(3) {
-            grid-area: pre-p-3;
-        }
-    }
-    /* Template 
-". explanation . img ." 
-". participation . benefits ." 
-". participation . benefits ." 
-". space space space ." 
-". requirements requirements requirements ." 
-". footer-flex ."
-*/
-    
-    //main grid
-    .main {
-        @include gd-display;
-        grid-area: main;
-        @include gd-columns($gd-sub);
-        grid-template-areas: "explanation explanation explanation" "participation participation participation" "benefits benefits benefits" ". . ." "requirements requirements requirements" "ffoot ffoot ffoot";
-    }
-    
-    //main explanation grid
-    .explanation {
-        @include gd-display;
-        grid-area: explanation;
-        @include gd-columns($gd-content);
-        @include gd-rows($gd-rows);
-        grid-template-areas: ". . exp-header ." ". exp-p-1 exp-p-2 .";
-        //placeholder for img
-        background-image: url(https://cdn.glitch.com/ba0615c2-9d9b-4d39-bde6-ff27665ccd56%2Ftiefighter.svg?v=1585104694878);
-        background-position: top left;
-        background-repeat: no-repeat;
-        h3 {
-            grid-area: exp-header;
-            text-align: $align-r;
-            align-self: $align-cen;
-        }
-        p {
-            grid-area: exp-p-1;
-        }
-        p:nth-of-type(2) {
-            grid-area: exp-p-2;
-            text-align: $align-r;
-        }
-    }
-    
-    //main participation grid
-    .participation {
-        @include gd-display;
-        grid-area: participation;
-        @include gd-columns($gd-content);
-        @include gd-rows(5vh auto);
-        grid-template-areas: ". . . ." ". . par-p-1 ." ". par-header par-p-2 ." ". . par-p-3 .";
-        h3 {
-            grid-area: par-header;
-            align-self: center;
-        }
-        p {
-            grid-area: par-p-1;
-            text-align: $align-r;
-        }
-        p:nth-of-type(2) {
-            grid-area: par-p-2;
-        }
-        p:nth-of-type(3) {
-            grid-area: par-p-3;
-        }
-    }
-    
-    //main benefits grid
-    .benefits {
-        @include gd-display;
-        grid-area: benefits;
-        @include gd-columns($gd-content);
-        @include gd-rows($gd-rows);
-        grid-template-areas: ". . . ."". . ben-header ." ". ben-p-1 ben-header .";
-        //placeholder for img
-        background-image: url(https://cdn.glitch.com/ba0615c2-9d9b-4d39-bde6-ff27665ccd56%2Fxwing.svg?v=1584585877583);
-        background-position: top left;
-        background-repeat: no-repeat;
-        h3 {
-            grid-area: ben-header;
-            text-align: $align-r;
-            align-self: $align-cen;
-            margin-bottom: -250px;
-        }
-        p {
-            grid-area: ben-p-1;
-            margin-bottom: 10px;
-        }
-    }
-    
-    //main requirements grid
-    .requirements {
-        @include gd-display;
-        grid-area: requirements;
-        @include gd-columns($gd-content);
-        @include gd-rows(75px auto);
-        grid-template-areas: ". req-header req-header ." ". req-p-1 req-p-1 ." ". req-p-2 req-p-2 ." ". req-p-3 req-p-4 ."". req-p-5 req-p-5 .";
-        h3 {
-            grid-area: req-header;
-            justify-self: $align-cen;
-            padding: $pad-1w;
-        }
-        p {
-            grid-area: req-p-1;
-            padding: $pad-hqr;
-        }
-        p:nth-of-type(2) {
-            grid-area: req-p-2;
-        }
-        p:nth-of-type(3) {
-            grid-area: req-p-3;
-        }
-        p:nth-of-type(4) {
-            grid-area: req-p-4;
-            text-align: $align-r;
-        }
-        p:nth-of-type(5) {
-            grid-area: req-p-5;
-            padding: $pad-2w;
-            text-align: $align-cen;
-        }
-        //1 h3 5 paras
-    }
-    
-    //main footer flex
-    footer {
-        grid-area: ffoot;
-        @include flex-container(row);
-        justify-content: space-evenly;
-        align-items: $align-cen;
-        padding: 0;
-        width: 100%;
-        a {
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            width: 20%;
-            height: 75px;
-        }
-    }
-    /* Template
-". bot-bar bot-bar bot-bar ." 
-". bot-bar bot-bar bot-bar ." 
-". bot-bar bot-bar bot-bar ." 
-". space space space ."
-*/
-    
-    //side-bar "bottom"
-    .sidebar {
-        @include gd-display;
-        grid-area: foot;
+}
+
+header {
+    grid-area: banner;
+}
+
+.summary {
+    grid-area: summary;
+    perspective: 2000px;
+    perspective-origin: 50% -200px;
+    margin-bottom: 60px;
+    p {
+        background: transparent;
+        box-shadow: none;
         color: $color-1;
+        transform: rotateX(60deg) translateZ(10px);
+        animation: none;
+        font-size: 150%;
     }
-    
-    .sidebar .wrapper {
-        @include gd-display;
-        @include gd-columns($gd-content);
-        @include gd-rows(1fr 0.5fr .8fr 75px);
-        grid-template-areas: ". ds ds ." ". da da ." ". zr zr ." ". . . .";
-        grid-row-gap: 10px;
+    p:nth-of-child(2) {
+        padding: revert;
+        margin: 0;
+    }
+}
+
+.preamble {
+    @include gd-display;
+    grid-area: preamble;
+    @include gd-columns($gd-content);
+    grid-template-areas: ". . ." ". pre-header pre-p-2" ". pre-p-1 pre-p-3";
+    h3 {
+        grid-area: pre-header;
+        align-self: center;
+    }
+    p {
+        grid-area: pre-p-1;
+        text-align: $align-r;
+        font-size: 120%;
+    }
+    p:nth-of-type(1) {
+        text-align: $align-l;
+    }
+    p:nth-of-type(2) {
+        grid-area: pre-p-2;
+    }
+    p:nth-of-type(3) {
+        grid-area: pre-p-3;
+    }
+}
+
+//main grid
+.main {
+    @include gd-display;
+    grid-area: main;
+    @include gd-columns($gd-sub);
+    grid-template-areas: "explanation explanation explanation" "participation participation participation" "benefits benefits benefits" ". . ." "requirements requirements requirements" "ffoot ffoot ffoot";
+}
+
+//main explanation grid
+.explanation {
+    @include gd-display;
+    grid-area: explanation;
+    @include gd-columns($gd-content);
+    @include gd-rows(60vh auto);
+    grid-template-areas: ". . . ."". exp-header . ." ". exp-p-1 exp-p-2 .";
+    background-image: url(https://cdn.glitch.com/ba0615c2-9d9b-4d39-bde6-ff27665ccd56%2Ftiefighter.svg?v=1585104694878);
+    background-position: top left;
+    background-repeat: no-repeat;
+    h3 {
+        grid-area: exp-header;
+        text-align: $align-r;
+        align-self: $align-cen;
+    }
+    p {
+        grid-area: exp-p-1;
+        font-size: 120%;
+    }
+    p:nth-of-type(2) {
+        grid-area: exp-p-2;
+        text-align: $align-r;
+    }
+}
+
+//main participation grid
+.participation {
+    @include gd-display;
+    grid-area: participation;
+    @include gd-columns($gd-content);
+    @include gd-rows(5vh auto);
+    grid-template-areas: ". . . ." ". . . ." ". par-p-2 par-header ." ". par-p-1 par-p-3 .";
+    h3 {
+        grid-area: par-header;
+        align-self: center;
+    }
+    p {
+        grid-area: par-p-1;
+        text-align: $align-l;
+        font-size: 120%;
+    }
+    p:nth-of-type(2) {
+        grid-area: par-p-2;
+    }
+    p:nth-of-type(3) {
+        grid-area: par-p-3;
+        text-align: $align-r;
+    }
+}
+
+//main benefits grid
+.benefits {
+    @include gd-display;
+    grid-area: benefits;
+    @include gd-columns($gd-content);
+    @include gd-rows(40vh auto);
+    grid-template-areas: ". . . ."". . ben-header ." ". ben-p-1 ben-header .";
+    background-image: url(https://cdn.glitch.com/ba0615c2-9d9b-4d39-bde6-ff27665ccd56%2Fxwing.svg?v=1584585877583);
+    background-position: top left;
+    background-repeat: no-repeat;
+    h3 {
+        grid-area: ben-header;
+        text-align: $align-l;
+        align-self: $align-cen;
+    }
+    p {
+        grid-area: ben-p-1;
+        margin-bottom: 10px;
+        font-size: 120%;
+    }
+}
+
+//main requirements grid
+.requirements {
+    @include gd-display;
+    grid-area: requirements;
+    @include gd-columns($gd-content);
+    @include gd-rows(20vh auto);
+    grid-template-areas: ". req-header req-header ." ". req-p-1 req-p-1 ." ". req-p-2 req-p-2 ." ". req-p-3 req-p-4 ."". req-p-5 req-p-5 .";
+    h3 {
+        grid-area: req-header;
+        align-self: $align-cen;
+        justify-self: $align-cen;
+        padding: $pad-1w;
+    }
+    p {
+        grid-area: req-p-1;
+        padding: $pad-hqr;
+        font-size: 120%;
+    }
+    p:nth-of-type(2) {
+        grid-area: req-p-2;
+    }
+    p:nth-of-type(3) {
+        grid-area: req-p-3;
+    }
+    p:nth-of-type(4) {
+        grid-area: req-p-4;
+        text-align: $align-r;
+    }
+    p:nth-of-type(5) {
+        grid-area: req-p-5;
+        padding: $pad-2w;
         text-align: $align-cen;
     }
-    
-    .design-selection {
-        grid-area: ds;
+}
+
+//main footer flex
+footer {
+    grid-area: ffoot;
+    @include flex-container(row);
+    justify-content: space-evenly;
+    align-items: $align-cen;
+    padding: 0;
+    width: 100%;
+    a {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        height: 75px;
     }
-    
-    .design-archives {
-        grid-area: da;
-    }
-    
+}
+
+footer a:nth-of-type(1) {
+    background-image: none;
+}
+
+footer a:nth-of-type(2) {
+    background-image: none;
+}
+
+footer a:nth-of-type(4) {
+    background-image: none;
+}
+
+footer a:nth-of-type(3) {
+    background-image: none;
+}
+
+//side-bar "bottom"
+.sidebar,
+.sidebar:before {
+    grid-area: foot;
+    content: "";
+    font-family: $font-head;
+    color: $color-5;
+    font-size: 2rem;
+    margin-top: 1rem;
+}
+
+.sidebar:before {
+    display: block;
+    background-color: darken(white, 50%);
+    border-radius: 100%;
+    content: '';
+    height: 10px;
+    margin: 10px 0;
+    transition: .5s ease-in-out;
+}
+
+.wrapper:before {
+    content: "Design Credits";
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    margin: 0px;
+}
+
+.design-selection,
+.design-archives,
+.zen-resources {
+    display: none;
+}
+
+.sidebar:hover {
+    .design-selection,
+    .design-archives,
     .zen-resources {
-        grid-area: zr;
+        display: block;
+        padding: 50px;
+        background: rgba(38, 38, 38, 0.5);
+        box-shadow: 0px 0px 20px 15px rgba(38, 38, 38, 0.5);
+        border-radius: 10px;
     }
-    
-    .extra1 {
-        grid-area: ext;
+    h3 {
+        color: $color-5;
     }
+}
+
+.wrapper li {
+    font-family: $font-para;
+    color: $color-1;
+    font-size: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: $pad-1w;
+    a {
+        font-size: 1rem;
+    }
+}
+
+.design-selection h3,
+.design-archives h3,
+.zen-resources h3 {
+    text-align: center;
+}

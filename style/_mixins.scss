@@ -35,23 +35,3 @@
 @mixin gd-rows($rows, $base: $gd-rows) {
     grid-template-rows: $rows;
 }
-
-
-/* 
-https://css-tricks.com/browser-compatibility-css-grid-layouts-simple-sass-mixins/
-
-For IE compatibility: -add in later-
-
-    @mixin grid-child (colstart, colend, rowstart, row-end) {
-    -ms-grid-column: col-start;
-    -ms-grid-column-span: col-end - col-start;
-    -ms-grid-row: row-start;
-    -ms-grid-row-span: row-end - row-start;
-    grid-column: #{col-start}/#{col-end};
-    grid-row: #{row-start}/#{row-end};
-  }
-  
-  .child {
-    @include grid-child(2, 3, 2, 3);
-  }
-  */

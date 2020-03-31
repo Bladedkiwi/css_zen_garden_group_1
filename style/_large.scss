@@ -1,130 +1,226 @@
-//base styles
-header {
-    font-size: $font-3w;
-}
-
-h3 {
-    font-size: $font-1hqr;
-    padding: 0;
-    margin: $font-hqr;
-    margin-left: 0;
-}
-
-//page grid
-//top left, top right rebel/empire logos
-.page-wrapper {
-    @include gd-rows(50vh auto);
-    //Placeholders for buttons
-}
-
-//intro
-.preamble {
-    @include gd-rows(15vh auto);
-    grid-template-areas: ". . . ." ". pre-header pre-p-2 ." ". pre-p-1 pre-p-3 .";
+    //base styles
+    header {
+        font-size: $font-3w;
+    }
+    
     h3 {
-        align-self: $align-cen;
+        font-size: $font-1hqr;
+        padding: 0;
+        margin: $font-hqr;
+        margin-left: 0;
     }
-    p:nth-of-type(1) {
-        text-align: $align-l;
-    }
-}
-
-//main grid
-.main {
-    grid-template-areas: "explanation explanation explanation" "participation benefits benefits" "participation benefits benefits" "requirements requirements requirements" "ffoot ffoot ffoot";
-}
-
-//main explanation grid
-.explanation {
-    @include gd-rows($gd-rows);
-    grid-template-areas: ". . . ."". exp-header . ." ". exp-p-1 . ." ". exp-p-2 . .";
-    background-position: right;
-    h3 {
-        text-align: $align-l;
-        align-self: $align-cen;
-    }
+    
     p {
-        text-align: $align-l;
+        font-size: 150%;
     }
-    p:nth-of-type(2) {
-        text-align: $align-l;
+    
+    .summary p {
+        font-size: 30px;
     }
-}
-
-//main participation grid
-.participation {
-    @include gd-columns(.1fr 1fr);
-    @include gd-rows($gd-rows);
-    grid-template-areas: ". ." ". par-header" ". par-p-1" ". par-p-2 " ". par-p-3";
-    p {
-        text-align: $align-l;
+    
+    //page grid
+    .page-wrapper {
+        @include gd-rows(50vh auto);
+        background-image: url(https://cdn.glitch.com/ba0615c2-9d9b-4d39-bde6-ff27665ccd56%2Ftiefighter.svg?v=1585104694878), url(https://cdn.glitch.com/ba0615c2-9d9b-4d39-bde6-ff27665ccd56%2Fxwing.svg?v=1585104694878);
+        background-repeat: no-repeat;
+        background-size: 25%;
+        background-position: 200% 2%, 150% 2%;
+        animation: tieFlying 3s linear infinite;
     }
-}
-
-//main benefits grid
-.benefits {
-    @include gd-columns(1fr .1fr);
-    @include gd-rows(20vh 10vh auto);
-    grid-template-areas: ". ." ". ." "ben-header ." ". ." "ben-p-1 .";
-    background-position: top left;
-    p {
-        text-align: $align-r;
-        padding: $pad-2w;
+    
+    @keyframes tieFlying {
+        from {
+            background-position: 210% -5%, 150% 2%;
+        }
+        to {
+            background-position: -150% 25%, -210% 30%;
+        }
     }
-}
-
-//main requirements grid
-.requirements {
-    @include gd-rows(20vh 75px auto);
-    grid-template-areas: ". . . ."". req-header req-header ." ". req-p-1 req-p-1 ." ". req-p-2 req-p-2 ." ". req-p-3 req-p-3 ." ". req-p-4 req-p-4 ."". req-p-5 req-p-5 .";
-    p:nth-of-type(4) {
-        text-align: $align-l;
+    
+    //intro
+    .intro {
+        h1 {
+            font-size: 90px;
+            text-shadow: 2px 2px $color-1;
+        }
+        h2 {
+            font-size: 40px;
+            text-shadow: 2px 2px $color-1;
+        }
     }
-}
-
-//main footer flex
-footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    grid-area: ffoot;
-    //@include flex-container(row);
-    //justify-content: space-evenly;
-    //align-items: $align-cen;
-    padding: 50px 0;
-    width: 100%;
-    a {
+    
+    .preamble {
+        @include gd-rows(15vh auto);
+        grid-template-areas: ". . . ." ". pre-header pre-p-2 ." ". pre-p-1 pre-p-3 .";
+        h3 {
+            align-self: $align-cen;
+        }
+        p:nth-of-type(1) {
+            text-align: $align-l;
+        }
+    }
+    
+    //main grid
+    .main {
+        grid-template-areas: "explanation explanation explanation" "participation benefits benefits" "participation benefits benefits" "requirements requirements requirements" "ffoot ffoot ffoot";
+    }
+    
+    //main explanation grid
+    .explanation {
+        @include gd-rows($gd-rows);
+        grid-template-areas: ". . . ."". exp-header exp-header ." ". exp-p-1 exp-p-2 ." ". . . .";
+        background-position: right;
+        background-image: none;
+        h3 {
+            text-align: $align-l;
+            align-self: $align-cen;
+        }
+        p {
+            text-align: $align-l;
+        }
+        p:nth-of-type(2) {
+            text-align: $align-l;
+        }
+    }
+    
+    //main participation grid
+    .participation {
+        @include gd-columns(.1fr 1fr);
+        @include gd-rows($gd-rows);
+        grid-template-areas: ". ." ". par-header" ". par-p-1" ". par-p-2 " ". par-p-3";
+        p {
+            text-align: $align-l;
+        }
+    }
+    
+    //main benefits grid
+    .benefits {
+        @include gd-columns(1fr .1fr);
+        @include gd-rows(20vh 10vh auto);
+        grid-template-areas: ". ." ". ." "ben-header ." ". ." "ben-p-1 .";
+        h3 {
+            text-align: $align-r;
+            margin-top: 6em;
+        }
+        p {
+            text-align: $align-r;
+            padding: $pad-2w;
+        }
+    }
+    
+    //main requirements grid
+    .requirements {
+        @include gd-rows(20vh 75px auto);
+        grid-template-areas: ". . . ."". req-header req-header ." ". req-p-1 req-p-1 ." ". req-p-2 req-p-2 ." ". req-p-3 req-p-3 ." ". req-p-4 req-p-4 ."". req-p-5 req-p-5 .";
+        h3 {
+            align-self: inherit;
+        }
+        p:nth-of-type(4) {
+            text-align: $align-l;
+        }
+    }
+    
+    //main footer flex
+    footer {
+        display: flex;
+        justify-content: $align-cen;
+        align-items: $align-cen;
+        grid-area: ffoot;
+        padding: 50px 0;
+        width: 100%;
+        a {
+            display: block;
+            text-align: $align-cen;
+            width: 300px;
+            height: 75px;
+        }
+    }
+    
+    //side-bar "bottom"
+    .sidebar {
+        display: grid;
+        grid-template-rows: 0.5fr 1fr 100px 100px;
+        grid-template-areas: '.' 'sidebar' '.' 'planet';
+        height: 300px;
+    }
+    
+    .sidebar:before {
+        display: none;
+    }
+    
+    .wrapper {
+        grid-area: sidebar;
+        height: 300px;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
+    
+    .wrapper:before {
+        display: none;
+    }
+    
+    .wrapper::-webkit-scrollbar {
+        display: none !important;
+    }
+    
+    .design-selection,
+    .design-archives,
+    .zen-resources {
         display: block;
-        text-align: center;
-        width: 300px;
-        height: 75px;
     }
-}
-
-//side-bar "bottom"
-.sidebar {
-    display: grid;
-    grid-template-rows: 0.5fr 1fr 100px 100px;
-    grid-template-areas: '.' 'sidebar' '.' 'planet';
-}
-
-.wrapper {
-    grid-area: sidebar;
-    height: 300px;
-    overflow: auto;
-    * {
-        padding: $pad-1w;
+    
+    .sidebar:hover {
+        .design-selection,
+        .design-archives,
+        .zen-resources {
+            padding: 0;
+            background: none;
+            box-shadow: none;
+            border-radius: none;
+        }
+        h3 {
+            color: $color-1;
+        }
     }
-}
-
-.extra1 {
-    z-index: -1;
-    position: absolute;
-    bottom: 0;
-    background: $color-4;
-    height: 200px;
-    width: 100%;
-    border-top-left-radius: 100%;
-    border-top-right-radius: 100%;
-    box-shadow: 0 0 50px $color-5;
-}
+    
+    //extra div
+    .extra1 {
+        z-index: -1;
+        position: absolute;
+        bottom: 0;
+        background: $color-4;
+        height: 200px;
+        width: 100%;
+        border-top-left-radius: 100%;
+        border-top-right-radius: 100%;
+        box-shadow: 0 0 50px $color-5;
+    }
+    
+    footer a:nth-of-type(1) {
+        background-image: url(https://cdn.glitch.com/ba0615c2-9d9b-4d39-bde6-ff27665ccd56%2FheadVader.svg?v=1585102059786);
+        background-position: 100% 10%;
+        background-repeat: no-repeat;
+    }
+    
+    footer a:nth-of-type(2) {
+        background-image: url(https://cdn.glitch.com/ba0615c2-9d9b-4d39-bde6-ff27665ccd56%2FheadTrooper.svg?v=1584585877583 );
+        background-position: 100% 10%;
+        background-repeat: no-repeat;
+    }
+    
+    footer a:nth-of-type(4) {
+        background-image: url(https://cdn.glitch.com/ba0615c2-9d9b-4d39-bde6-ff27665ccd56%2FheadYoda.svg?v=1584585877583);
+        background-position: 100% 60%;
+        background-repeat: no-repeat;
+        background-size: 40%;
+        text-align: start;
+        padding-left: 90px;
+    }
+    
+    footer a:nth-of-type(3) {
+        background-image: url(https://cdn.glitch.com/ba0615c2-9d9b-4d39-bde6-ff27665ccd56%2FheadChewie.svg?v=1584585877583);
+        background-position: 100% 10%;
+        background-repeat: no-repeat;
+    }
