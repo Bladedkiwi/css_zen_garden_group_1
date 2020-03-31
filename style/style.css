@@ -287,11 +287,6 @@ header {
   font-size: 150%;
 }
 
-.summary p:nth-of-child(2) {
-  padding: revert;
-  margin: 0;
-}
-
 .preamble {
   display: -ms-grid;
   display: grid;
@@ -835,7 +830,6 @@ footer a:nth-of-type(3) {
     -ms-grid-column: 1;
     grid-area: sidebar;
     height: 300px;
-    scrollbar-width: none;
     -ms-overflow-style: none;
     overflow-y: scroll;
     overflow-x: hidden;
@@ -851,14 +845,14 @@ footer a:nth-of-type(3) {
   .zen-resources {
     display: block;
   }
-  .sidebar:hover .design-selection,
-  .sidebar:hover .design-archives,
-  .sidebar:hover .zen-resources {
+  .sidebar:hover .wrapper .design-selection,
+  .sidebar:hover .wrapper .design-archives,
+  .sidebar:hover .wrapper .zen-resources {
     padding: 0;
-    background: none;
+    background: transparent;
     -webkit-box-shadow: none;
             box-shadow: none;
-    border-radius: none;
+    border-radius: 0;
   }
   .sidebar:hover h3 {
     color: #FCC90F;

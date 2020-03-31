@@ -151,7 +151,6 @@
     .wrapper {
         grid-area: sidebar;
         height: 300px;
-        scrollbar-width: none;
         -ms-overflow-style: none;
         overflow-y: scroll;
         overflow-x: hidden;
@@ -172,13 +171,13 @@
     }
     
     .sidebar:hover {
-        .design-selection,
-        .design-archives,
-        .zen-resources {
+        .wrapper .design-selection,
+        .wrapper .design-archives,
+        .wrapper .zen-resources {
             padding: 0;
-            background: none;
+            background: transparent;
             box-shadow: none;
-            border-radius: none;
+            border-radius: 0;
         }
         h3 {
             color: $color-1;
