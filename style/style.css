@@ -168,7 +168,7 @@ a:hover {
   color: #9cb3e1;
 }
 
-.summary abbr {
+.summary a {
   text-decoration: underline;
 }
 
